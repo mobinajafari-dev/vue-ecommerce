@@ -1,0 +1,26 @@
+{
+  "footer": {
+    "link": {
+      "links": "مطالب مرتبط",
+      "about-us": "درباره ما",
+      "faqs": "سوالات متداول",
+      "categories": "",
+      "shipping": "ارسال مرسوله"
+    },
+    "opening-hours": {
+      "opening-hours": "ساعات کاری",
+      "days": "شنبه تا چهارشنبه",
+      "weekends": "پنچ شنبه و جمعه"
+    },
+    "contact": {
+      "location": "آدرس",
+      "place": "خیابان قدوسی",
+      "call": "با ما تماس بگیرید"
+    }
+  },
+  "navbar": {
+    "left": {
+      "home": "خانه"
+    }
+  }
+}

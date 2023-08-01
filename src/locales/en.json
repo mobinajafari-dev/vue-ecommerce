@@ -1,3 +1,26 @@
 {
-  "message": "hello i18n !!"
+  "footer": {
+    "link": {
+      "links": "Useful links",
+      "about-us": "About Us",
+      "faqs": "FAQs",
+      "categories": "Categories",
+      "shipping": "Shipping"
+    },
+    "opening-hours": {
+      "opening-hours": "Opening Hours",
+      "days": "Sat - Wed",
+      "weekends": "Thu , Fri"
+    },
+    "contact": {
+      "location": "Location",
+      "place": "somewhere on the earth",
+      "call": "Call Us Now"
+    }
+  },
+  "navbar": {
+    "left": {
+      "home": "Home"
+    }
+  }
 }

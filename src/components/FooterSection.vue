@@ -27,7 +27,7 @@
             height="30"
             src="https://img.icons8.com/ios/50/pinterest--v1.png"
             alt="pinterest--v1"
-            class="media-icon"
+            class="media-icon pinterest"
           />
         </div>
         <div class="icon-box">
@@ -42,35 +42,41 @@
       </div>
     </div>
     <div class="links">
-      <h4>Useful Links</h4>
-      <a href="#" class="normal white">About Us</a> <br />
-      <a href="#" class="normal white">FAQs</a> <br />
-      <a href="#" class="normal white">Categories</a> <br />
-      <a href="#" class="normal white">Shipping</a>
+      <h4 class="links__title">Useful Links</h4>
+      <a href="#" class="links__txt">About Us</a> <br />
+      <a href="#" class="links__txt">FAQs</a> <br />
+      <a href="#" class="links__txt">Categories</a> <br />
+      <a href="#" class="links__txt">Shipping</a>
     </div>
-    <div class="contact">
-      <h4>Opening Hours</h4>
-      <b>sat - wed : </b> <br />
+    <div class="opening-hours">
+      <h4 class="opening-hours__title">Opening Hours</h4>
+      <p class="opening-hours__day">Sat - Wed :</p>
       <p>10 A.M - 9 P.M</p>
-      <b>thu - fri : </b> <br />
+      <p class="opening-hours__day">Thu , Fri :</p>
       <p>4 P.M - 9 P.M</p>
     </div>
-    <div class="phone">
-      <img
-        width="30"
-        height="30"
-        src="https://img.icons8.com/ios/100/marker--v1.png"
-        alt="marker--v1"
-      />
-      <b>Location :</b>
-      <p>Somewhere on the earth;)</p>
-      <img
-        width="30"
-        height="30"
-        src="https://img.icons8.com/ios/50/000000/phone--v1.png"
-        alt="phone--v1"
-      />
-      <b>Call Us Now :</b>
+
+    <div class="contact">
+      <div class="contact__title">
+        <img
+          width="30"
+          height="30"
+          src="https://img.icons8.com/ios/50/000000/marker--v1.png"
+          alt="marker--v1"
+        />
+        <p>Location :</p>
+      </div>
+      <p>Somewhere on the earth :)</p>
+      <br />
+      <div class="contact__title">
+        <img
+          width="30"
+          height="30"
+          src="https://img.icons8.com/ios/50/000000/phone--v1.png"
+          alt="phone--v1"
+        />
+        <p>Call Us Now :</p>
+      </div>
       <p>+000 000 0000</p>
     </div>
   </footer>
@@ -89,9 +95,11 @@ export default {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
+  flex-wrap: wrap;
   background-color: #555;
-  font-family: "Lato";
   padding: 3rem;
+  color: #eee;
+  padding-bottom: 4rem;
 }
 
 /* logo and media */
@@ -113,6 +121,11 @@ export default {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  display: flex;
+}
+
+.pinterest {
+  border-radius: 50% !important;
 }
 
 .icon-box::before {
@@ -132,7 +145,7 @@ export default {
 
 .media-icon {
   transition: all 0.5s;
-  border-radius: 40%;
+  border-radius: 10px;
 }
 
 .icon-box:hover {
@@ -149,20 +162,66 @@ export default {
 .links {
   line-height: 30px;
 }
-.white {
-  color: #000;
+
+.links__title {
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.links__txt {
+  color: #eee;
+  line-height: 10px;
+  text-decoration: none;
+}
+
+/* opening hours */
+
+.opening-hours__title {
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.opening-hours__day {
+  padding-top: 0.5rem;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* contact */
+
+.contact {
+  text-align: center;
+}
+
+.contact__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  justify-content: space-evenly;
+}
+
+/* responsive */
+
+@media screen and (max-width: 920px) {
+  .contact {
+    display: none;
+  }
 }
 @media screen and (max-width: 768px) {
-  .phone {
+  .opening-hours {
     display: none;
   }
 }
 @media screen and (max-width: 480px) {
-  .contact {
-    display: none;
+  .links {
+    margin-top: 2rem;
   }
   .footer {
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
