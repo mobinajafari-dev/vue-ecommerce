@@ -29,7 +29,7 @@ const routes = [
     component: () => import('../views/UserProfileView.vue')
   },
   {
-    path: '/products/:id',
+    path: '/products',
     name: 'product',
     component:  () => import('../views/ProductView.vue'),
     props:true
