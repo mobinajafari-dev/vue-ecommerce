@@ -24,7 +24,7 @@
     <span>yes</span>
   </div>
   <div class="comment">
-    <div class="comment-img"><img src="@/assets/user.png" alt="user"/></div>
+    <div class="comment-img"><img width="50" height="50" src="https://img.icons8.com/ios/50/user-male-circle--v1.png" alt="user-male-circle--v1"/></div>
     <div class="comments-content"><h4>username</h4>
     <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis,
