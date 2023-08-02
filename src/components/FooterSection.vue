@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="media-wrapper">
-      <img src="@/assets/logo.png" alt="logo" class="footer-logo" />
+      <img src="@/assets/logo.webp" alt="logo" class="footer-logo" />
       <div class="media">
         <div class="icon-box">
           <img

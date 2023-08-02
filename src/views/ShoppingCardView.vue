@@ -1,19 +1,18 @@
 <template>
-    <div>
-
-    </div>
+  <NavbarSection />
 </template>
 
 <script>
+import NavbarSection from "@/components/NavbarSection.vue";
 export default {
-    setup () {
-        
-
-        return {}
-    }
-}
+  name: "ShoppingCardView",
+  components: {
+    NavbarSection,
+  },
+  setup() {
+    return {};
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style></style>

@@ -325,4 +325,9 @@ export default {
   color: #fff;
   transition: all 0.5ms;
 }
+
+.gradient:hover {
+  background: linear-gradient(rgba(59, 55, 53, 0.5));
+  z-index: 5;
+}
 </style>
