@@ -25,7 +25,7 @@
     </div>
     <div class="trends">
       <div class="best-sellers">
-        <h2>Best Sellers</h2>
+        <h2 class="best-sellers__title">Best Sellers</h2>
         <br />
         <div class="sell-wrapper">
           <div class="product-wrapper">
@@ -151,6 +151,7 @@ export default {
 
 .post-wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding-bottom: 2rem;
   width: 100%;
@@ -192,6 +193,9 @@ export default {
   align-items: flex-start;
 }
 
+.best-sellers__title {
+}
+
 /* ----  our services ----  */
 .services {
   display: flex;
@@ -218,7 +222,6 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  transition: height 1s ease-out;
   color: #fff;
 }
 
@@ -228,15 +231,28 @@ export default {
 
 /* responsive */
 @media only screen and (max-width: 600px) {
+  .service {
+    margin: 1rem;
+  }
 }
 
 @media only screen and (min-width: 600px) {
+  .service {
+    margin: 1rem;
+  }
 }
 
 @media only screen and (min-width: 768px) {
+  .service {
+    margin: 2rem;
+    flex-shrink: 2;
+  }
 }
 
 @media only screen and (min-width: 992px) {
+  .service {
+    margin: 2rem;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
