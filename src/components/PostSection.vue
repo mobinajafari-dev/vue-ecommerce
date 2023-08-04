@@ -1,18 +1,19 @@
 <template>
   <div class="post">
     <img alt="img-post" src="@/assets/black-sweater.jpg" class="post__img" />
-    <h4 class="post__title">Black sweater</h4>
+    <h4 class="post__title">نام محصول</h4>
     <p class="post__info">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum
-      beatae officia possimus aliquid facere exercitationem consequatur suscipit
-      magni, eveniet sapiente!
+      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
+      طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+      که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با
+      هدف بهبود حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد
     </p>
-    <p class="post__price">10 $</p>
+    <p class="post__price">500.000 تومان</p>
     <div class="post-btn__wrapper">
       <router-link class="detail-btn" :to="{ name: 'product' }"
-        >See More</router-link
+        >مشاهده</router-link
       >
-      <button class="add-btn">Add</button>
+      <button class="add-btn">اضافه</button>
     </div>
     <router-view />
   </div>

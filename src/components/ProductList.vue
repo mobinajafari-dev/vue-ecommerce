@@ -6,9 +6,9 @@
       class="product__photo"
     />
     <div class="product__info">
-      <b class="product__title"> black sweater </b>
+      <b class="product__title"> نام محصول </b>
       <div class="d-f">
-        <p class="product__price">10 $</p>
+        <p class="product__price">500.000 تومان</p>
         <router-link :to="{ name: 'product' }" class="product__btn--more"
           ><img
             width="25"

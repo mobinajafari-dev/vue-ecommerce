@@ -42,18 +42,18 @@
       </div>
     </div>
     <div class="links">
-      <h4 class="links__title">Useful Links</h4>
-      <a href="#" class="links__txt">About Us</a> <br />
-      <a href="#" class="links__txt">FAQs</a> <br />
-      <a href="#" class="links__txt">Categories</a> <br />
-      <a href="#" class="links__txt">Shipping</a>
+      <h4 class="links__title">مطالب مرتبط</h4>
+      <a href="#" class="links__txt">درباره ما</a> <br />
+      <a href="#" class="links__txt">سوالات متداول</a> <br />
+      <a href="#" class="links__txt">جدیدترین محصولات</a> <br />
+      <a href="#" class="links__txt">ارسال محصولات</a>
     </div>
     <div class="opening-hours">
-      <h4 class="opening-hours__title">Opening Hours</h4>
-      <p class="opening-hours__day">Sat - Wed :</p>
-      <p>10 A.M - 9 P.M</p>
-      <p class="opening-hours__day">Thu , Fri :</p>
-      <p>4 P.M - 9 P.M</p>
+      <h4 class="opening-hours__title">ساعات کاری</h4>
+      <p class="opening-hours__day">شنبه تا چهاشنبه :</p>
+      <p>9 صبح تا 9 شب</p>
+      <p class="opening-hours__day">پنچ شنبه و جمعه :</p>
+      <p>4 عصر تا 9 شب</p>
     </div>
 
     <div class="contact">
@@ -64,9 +64,9 @@
           src="https://img.icons8.com/ios/50/000000/marker--v1.png"
           alt="marker--v1"
         />
-        <p>Location :</p>
+        <p>آدرس</p>
       </div>
-      <p>Somewhere on the earth :)</p>
+      <p>بلوار خیام ، کوچه قدوسی ، پلاک 20</p>
       <br />
       <div class="contact__title">
         <img
@@ -75,7 +75,7 @@
           src="https://img.icons8.com/ios/50/000000/phone--v1.png"
           alt="phone--v1"
         />
-        <p>Call Us Now :</p>
+        <p>با ما تماس بگیرید</p>
       </div>
       <p>+000 000 0000</p>
     </div>

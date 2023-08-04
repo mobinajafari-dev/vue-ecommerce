@@ -3,13 +3,13 @@
   <main class="main">
     <header class="header">
       <div class="header-title">
-        <h1>New Arrivals</h1>
-        <h2>Summer Collection</h2>
+        <h1>تازه ترین محصولات</h1>
+        <h2>کالکشن تابستانه</h2>
         <Button />
       </div>
     </header>
     <div class="new-arrivals">
-      <h2 class="new-arrivals-title">New Arrivals</h2>
+      <h2 class="new-arrivals-title">تازه ترین ها</h2>
       <div class="post-wrapper">
         <PostSection />
         <PostSection />
@@ -19,13 +19,13 @@
     </div>
     <div class="off">
       <div class="off__content">
-        <h1>50% off</h1>
-        <h3>This Weekend</h3>
+        <h1>50% تخفیف</h1>
+        <h3>حراج تابستانه</h3>
       </div>
     </div>
     <div class="trends">
       <div class="best-sellers">
-        <h2 class="best-sellers__title">Best Sellers</h2>
+        <h2 class="best-sellers__title">پر فروش ترین ها</h2>
         <br />
         <div class="sell-wrapper">
           <div class="product-wrapper">
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="trendings">
-        <h2>Most trendings of this week</h2>
+        <h2>بهترین های این هفته</h2>
         <br />
         <PostSection />
       </div>
@@ -52,8 +52,8 @@
           alt="online-support"
         />
         <div class="service-info">
-          <b>24/7 Support</b>
-          <p>any time you can ask us</p>
+          <b>پشتیبانی 24 ساعته</b>
+          <p>هر زمانی می تونید با ما در ارتباط باشید</p>
         </div>
       </div>
       <div class="service">
@@ -64,8 +64,8 @@
           alt="fast-delivery--v2"
         />
         <div class="service-info">
-          <b>Free Shipping</b>
-          <p>any where you are</p>
+          <b>ارسال رایگان</b>
+          <p>به هر کجایی که هستید</p>
         </div>
       </div>
       <div class="service">
@@ -76,8 +76,8 @@
           alt="cardboard-box"
         />
         <div class="service-info">
-          <b>7 Days Return</b>
-          <p>don't love it? return it!</p>
+          <b>بازگشت محصول</b>
+          <p>تا 7 روز بعد میتونید مرجوعش کنید</p>
         </div>
       </div>
       <div class="service">
@@ -88,8 +88,8 @@
           alt="t-shirt--v3"
         />
         <div class="service-info">
-          <b>Over 1000 styles</b>
-          <p>a collection for any taste</p>
+          <b>بیش از 100 مدل لباس</b>
+          <p>فروشگاهی برای هر نوع سلیقه ایی</p>
         </div>
       </div>
     </div>
@@ -202,8 +202,8 @@ export default {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 30px 20px;
-  padding: 2rem;
+  margin: 30px 20px 0 20px;
+  padding: 1rem;
 }
 .service {
   margin: auto;
@@ -211,7 +211,7 @@ export default {
   align-items: center;
 }
 .service-info {
-  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /* hover */

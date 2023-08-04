@@ -4,22 +4,13 @@
       <ul class="nav-left">
         <li>
           <div>
-            <router-link to="/" class="normal nav-left__link">Home</router-link>
+            <router-link to="/" class="normal nav-left__link">خانه</router-link>
           </div>
         </li>
         <li>
-          <div>
-            <select name="language" class="lan">
-              <option value="English" selected><p>English</p></option>
-              <option value="Farsi"><p>Farsi</p></option>
-            </select>
-            <!-- <img
-              width="15"
-              height="15"
-              src="https://img.icons8.com/material-rounded/24/chevron-down.png"
-              alt="chevron-down"
-            /> -->
-          </div>
+          <router-link :to="{ name: 'about-us' }" class="normal nav-left__link"
+            >درباره ما</router-link
+          >
         </li>
       </ul>
     </div>

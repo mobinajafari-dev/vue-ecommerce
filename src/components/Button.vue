@@ -3,7 +3,7 @@
     <router-link :to="{ name: 'product' }" class="button">
       <div class="button__line"></div>
       <div class="button__line"></div>
-      <p class="button__text">shop now</p>
+      <p class="button__text">مشاهده</p>
       <div class="button__drow1"></div>
       <div class="button__drow2"></div>
     </router-link>
