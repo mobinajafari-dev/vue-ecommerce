@@ -15,17 +15,14 @@ export default {
 </script>
 
 <style>
-/* fonts */
-
-@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;700&display=swap");
-
 /* total styles */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Vazirmatn", sans-serif;
   direction: rtl;
+  font-family: "vazir";
+  max-width: 100%;
 }
 </style>

@@ -5,6 +5,7 @@ import ShoppingCardView from "../views/ShoppingCardView.vue";
 import ProductView from "../views/ProductView.vue";
 import NotFound from "../views/NotFound.vue";
 import UserProfileView from "../views/UserProfileView.vue";
+import ForgetPassword from "../components/ForgetPassword.vue";
 import Password from "../components/Password.vue";
 import Signin from "../components/Signin.vue";
 import AboutUsView from "../views/AboutUsView.vue";
@@ -24,6 +25,11 @@ const routes = [
     path: "/shopping-card",
     name: "shopping-card",
     component: () => import("../views/ShoppingCardView.vue"),
+  },
+  {
+    path: "/forget-password",
+    name: "forget-password",
+    component: () => import("../components/ForgetPassword.vue"),
   },
   {
     path: "/password",

@@ -230,15 +230,22 @@ export default {
 }
 
 /* responsive */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 576px) {
   .service {
     margin: 1rem;
   }
+  .header-title {
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 576px) {
   .service {
     margin: 1rem;
+  }
+  .header-title {
+    padding: 40vh 10vh 10vh 10vh;
   }
 }
 

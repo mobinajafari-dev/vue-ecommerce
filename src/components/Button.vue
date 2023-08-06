@@ -254,7 +254,6 @@ export default {
   }
 }
 
-/* 本体には関係ないスタイル */
 .container {
   width: 100%;
   height: 300px;
@@ -263,5 +262,19 @@ export default {
   justify-content: center;
   align-items: center;
   margin-top: -7rem;
+}
+
+/* responsive */
+@media screen and (max-width: 576px) {
+}
+@media screen and (min-width: 576px) {
+}
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 992px) {
+}
+@media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: 1400px) {
 }
 </style>

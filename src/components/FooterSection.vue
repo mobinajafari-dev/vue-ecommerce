@@ -204,27 +204,17 @@ export default {
 
 /* responsive */
 
-@media screen and (max-width: 920px) {
-  .contact {
-    display: none;
-  }
-}
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
   .opening-hours {
     display: none;
   }
-}
-@media screen and (max-width: 480px) {
+  .contact {
+    display: none;
+  }
   .links {
-    margin-top: 2rem;
-  }
-  .footer {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 2rem 1rem;
   }
 }
-
 /* animation */
 
 @keyframes MoveToBottom {

@@ -7,12 +7,12 @@
       <h2 class="login__title">خوش آمدید !</h2>
       <div class="input-wrapper">
         <div class="login__input">
-          <p class="input__title">ایمیل :</p>
+          <p class="input__title">نام کاربری :</p>
           <input
             type="email"
             name="email"
             id="email"
-            placeholder="ایمیل خود را وارد کنید"
+            placeholder="نام کاربری را وارد کنید"
             class="input__box"
           />
         </div>
@@ -35,7 +35,9 @@
           >ثبت نام</router-link
         >
       </div>
-      <router-link :to="{ name: 'password' }" class="login__link sign-in__link"
+      <router-link
+        :to="{ name: 'forget-password' }"
+        class="login__link sign-in__link"
         >فراموشی رمز عبور</router-link
       >
       <router-view />

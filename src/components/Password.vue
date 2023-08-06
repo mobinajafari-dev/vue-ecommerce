@@ -1,79 +1,47 @@
 <template>
   <NavbarSection />
-  <div class="forget-password">
-    <div class="forget-password__content">
-      <h2 class="forget-password__title">بازیابی رمز عبور</h2>
-      <p>
-        در صورت فراموش کردن رمز عبور کافی است ایمیل یا شماره همراه خود را وارد
-        کنید تا کد بازیابی رمز عبور برای شما ارسال گردد
-      </p>
-    </div>
-
-    <div class="btn-wrapper">
-      <p class="forget-password__info">ایمیل / شماره همراه :</p>
-      <input
-        type="text"
-        class="forget-password__input"
-        placeholder="ایمیل/شماره همراه خود را وارد کنید"
-      />
-    </div>
-    <div class="btn-wrapper">
-      <button @click="back()" class="login__btn">بازگشت</button>
-      <button class="login__btn">ارسال</button>
+  <div class="login">
+    <img src="../assets/password.jpg" alt="login" class="login__img" />
+    <div class="login__content">
+      <img src="@/assets/logo.webp" alt="logo" class="login__logo" />
+      <h2 class="login__title">یک کلمه عبور مطمئن را انتخاب کنید</h2>
+      <form class="input-wrapper">
+        <div class="login__input">
+          <p class="input__title">رمز عبور :</p>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="رمز عبور خود را وارد کنید"
+            class="input__box"
+          />
+        </div>
+        <div class="login__input">
+          <p class="input__title">تکرار رمز عبور :</p>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="input__box"
+            placeholder="رمز عبور خود را وارد کنید"
+          />
+        </div>
+      </form>
+      <button class="login__btn single-btn">ثبت نهایی</button>
+      <br />
+      <div class="sign-in__link"></div>
+      <router-view />
     </div>
   </div>
 </template>
-
 <script>
-import NavbarSection from "@/components/NavbarSection.vue";
+import NavbarSection from "./NavbarSection.vue";
 export default {
   name: "Password",
   components: {
     NavbarSection,
   },
-  methods: {
-    back() {
-      this.$router.go(-1);
-    },
-  },
 };
 </script>
 
-<style>
-.forget-password {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 10px;
-  max-width: 80vh;
-  margin: 15vh auto;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: self-start;
-}
-
-.forget-password__content {
-  margin: 20px 0;
-}
-
-.btn-wrapper {
-  display: flex;
-  padding: 1rem;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.forget-password__input {
-  padding: 0.8rem 3.5rem;
-  margin-right: 0.5rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #eee;
-  text-align: right;
-}
-
-.forget-password__title {
-  margin-bottom: 20px;
-}
-</style>
+<style></style>

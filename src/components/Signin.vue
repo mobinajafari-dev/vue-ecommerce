@@ -7,23 +7,13 @@
       <h2 class="login__title">ثبت نام</h2>
       <div class="input-wrapper">
         <div class="login__input">
-          <p class="input__title">نام :</p>
+          <p class="input__title">نام و نام خانوادگی :</p>
           <input
             type="email"
             name="email"
             id="email"
             placeholder="نام خود را وارد کنید"
             class="input__box"
-          />
-        </div>
-        <div class="login__input">
-          <p class="input__title">نام خانوادگی :</p>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            class="input__box"
-            placeholder="نام خانوادگی خود را وارد کنید"
           />
         </div>
         <div class="login__input">
@@ -47,13 +37,13 @@
           />
         </div>
         <div class="login__input">
-          <p class="input__title">رمزعبور :</p>
+          <p class="input__title"></p>
           <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="رمز عبور خود را وارد کنید"
+            type="password"
+            name="password"
+            id="password"
             class="input__box"
+            placeholder="نام خانوادگی خود را وارد کنید"
           />
         </div>
         <div class="login__input">
@@ -79,7 +69,9 @@
       </div>
       <div class="btn-wrapper">
         <button @click="back()" class="login__btn">بازگشت</button>
-        <button class="login__btn">ثبت نام</button>
+        <router-link :to="{ name: 'password' }" class="login__btn normal"
+          >تکمیل اطلاعات</router-link
+        >
       </div>
     </div>
   </div>
