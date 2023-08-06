@@ -9,12 +9,10 @@
       </div>
     </header>
     <div class="new-arrivals">
-      <h2 class="new-arrivals-title">تازه ترین ها</h2>
+      <h2 class="new-arrivals-title">جدیدترین ها</h2>
       <div class="post-wrapper">
-        <PostSection />
-        <PostSection />
-        <PostSection />
-        <PostSection />
+        <div class="d-f f-w"><PostSection /> <PostSection /></div>
+        <div class="d-f f-w"><PostSection /> <PostSection /></div>
       </div>
     </div>
     <div class="off">
@@ -44,52 +42,56 @@
       </div>
     </div>
     <div class="services">
-      <div class="service">
-        <img
-          width="64"
-          height="64"
-          src="https://img.icons8.com/pastel-glyph/64/online-support.png"
-          alt="online-support"
-        />
-        <div class="service-info">
-          <b>پشتیبانی 24 ساعته</b>
-          <p>هر زمانی می تونید با ما در ارتباط باشید</p>
+      <div>
+        <div class="service">
+          <img
+            width="64"
+            height="64"
+            src="https://img.icons8.com/pastel-glyph/64/online-support.png"
+            alt="online-support"
+          />
+          <div class="service-info">
+            <b>پشتیبانی 24 ساعته</b>
+            <p>هر زمانی می تونید با ما در ارتباط باشید</p>
+          </div>
+        </div>
+        <div class="service">
+          <img
+            width="64"
+            height="64"
+            src="https://img.icons8.com/pastel-glyph/64/fast-delivery--v2.png"
+            alt="fast-delivery--v2"
+          />
+          <div class="service-info">
+            <b>ارسال رایگان</b>
+            <p>به هر کجایی که هستید</p>
+          </div>
         </div>
       </div>
-      <div class="service">
-        <img
-          width="64"
-          height="64"
-          src="https://img.icons8.com/pastel-glyph/64/fast-delivery--v2.png"
-          alt="fast-delivery--v2"
-        />
-        <div class="service-info">
-          <b>ارسال رایگان</b>
-          <p>به هر کجایی که هستید</p>
+      <div>
+        <div class="service">
+          <img
+            width="64"
+            height="64"
+            src="https://img.icons8.com/pastel-glyph/64/cardboard-box.png"
+            alt="cardboard-box"
+          />
+          <div class="service-info">
+            <b>بازگشت محصول</b>
+            <p>تا 7 روز بعد میتونید مرجوعش کنید</p>
+          </div>
         </div>
-      </div>
-      <div class="service">
-        <img
-          width="64"
-          height="64"
-          src="https://img.icons8.com/pastel-glyph/64/cardboard-box.png"
-          alt="cardboard-box"
-        />
-        <div class="service-info">
-          <b>بازگشت محصول</b>
-          <p>تا 7 روز بعد میتونید مرجوعش کنید</p>
-        </div>
-      </div>
-      <div class="service">
-        <img
-          width="64"
-          height="64"
-          src="https://img.icons8.com/pastel-glyph/64/t-shirt--v3.png"
-          alt="t-shirt--v3"
-        />
-        <div class="service-info">
-          <b>بیش از 100 مدل لباس</b>
-          <p>فروشگاهی برای هر نوع سلیقه ایی</p>
+        <div class="service">
+          <img
+            width="64"
+            height="64"
+            src="https://img.icons8.com/pastel-glyph/64/t-shirt--v3.png"
+            alt="t-shirt--v3"
+          />
+          <div class="service-info">
+            <b>بیش از 100 مدل لباس</b>
+            <p>فروشگاهی برای هر نوع سلیقه ایی</p>
+          </div>
         </div>
       </div>
     </div>
@@ -117,6 +119,12 @@ export default {
 </script>
 
 <style>
+/* ----  total ---- */
+
+.f-w {
+  flex-wrap: wrap;
+}
+
 /* ----  header ---- */
 
 .header {
@@ -152,7 +160,7 @@ export default {
 .post-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   padding-bottom: 2rem;
   width: 100%;
 }
@@ -237,12 +245,17 @@ export default {
   .header-title {
     margin: 0 auto;
     padding: 0;
+    padding-top: 15rem;
+  }
+  .service-info {
+    font-size: 13px;
+    font-family: "vazir";
   }
 }
 
 @media only screen and (min-width: 576px) {
   .service {
-    margin: 1rem;
+    margin: 0.5rem;
   }
   .header-title {
     padding: 40vh 10vh 10vh 10vh;
@@ -263,5 +276,8 @@ export default {
 }
 
 @media only screen and (min-width: 1200px) {
+  .post-wrapper {
+    margin: 0;
+  }
 }
 </style>

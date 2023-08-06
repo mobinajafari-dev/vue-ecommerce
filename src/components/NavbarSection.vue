@@ -12,13 +12,20 @@
             >درباره ما</router-link
           >
         </li>
+        <li>
+          <router-link
+            :to="{ name: 'search' }"
+            class="normal nav-left__link search-xs"
+            >جستجو</router-link
+          >
+        </li>
       </ul>
     </div>
     <div class="nav-center">
       <img src="@/assets/logo.webp" alt="logo" />
     </div>
     <div class="nav-right">
-      <router-link class="border icon" :to="{ name: 'search' }">
+      <router-link class="border icon search-icon" :to="{ name: 'search' }">
         <img
           width="32"
           height="32"
@@ -41,52 +48,50 @@
           alt="gender-neutral-user"
         />
       </router-link>
-      <div class="icon icon-bars .nav-left--open" @click="nav()" ref="open">
-        <img
-          width="32"
-          height="32"
-          src="https://img.icons8.com/ios/50/menu--v1.png"
-          alt="menu--v1"
-        />
+      <div class="icon icon-bars">
+        <MenuIcon @click="toggelMobileNav()" />
       </div>
-      <div class="border icon icon-x" ref="closed">
-        <img
-          width="32"
-          height="32"
-          src="https://img.icons8.com/ios-filled/50/x.png"
-          alt="x"
-        />
+      <div v-show="mobileNav">
+        <ul class="dropdown-nav">
+          <li>
+            <router-link to="/" class="normal nav-left__link">خانه</router-link>
+          </li>
+          <li>
+            <router-link
+              :to="{ name: 'about-us' }"
+              class="normal nav-left__link"
+              >درباره ما</router-link
+            >
+          </li>
+          <li>
+            <router-link
+              :to="{ name: 'search' }"
+              class="normal nav-left__link search-xs"
+              >جستجو</router-link
+            >
+          </li>
+        </ul>
       </div>
-
       <router-view />
     </div>
   </nav>
 </template>
 
 <script>
+import MenuIcon from "@/components/MenuIcon.vue";
 export default {
   name: "NavbarSection",
-  setup() {
+  components: {
+    MenuIcon,
+  },
+  data() {
     return {
-      navBtn: document.querySelector(".nav-left"),
-      menuIcon: document.querySelector(".icon-bars"),
-      mobileView: false,
-      showNav: false,
+      mobileNav: false,
     };
   },
   methods: {
-    nav() {
-      if (this.navOpen) {
-        this.navBtn.style.left = 0;
-        this.menuIcon.style.display = "none";
-        this.closedIcon.style.display = "flex";
-        this.navOpen = false;
-      } else {
-        this.navBtn.style.left = "-50%";
-        this.menuIcon.style.display = "flex";
-        this.closedIcon.style.display = "none";
-        this.navOpen = true;
-      }
+    toggelMobileNav() {
+      this.mobileNav = !this.mobileNav;
     },
   },
 };
@@ -119,13 +124,6 @@ export default {
   padding: 10px;
 }
 
-.lan {
-  border: none;
-  font-size: 20px;
-  font-family: "Vazirmatn", sans-serif;
-  color: #000;
-}
-
 /* navbar left */
 
 .nav-left {
@@ -141,12 +139,8 @@ export default {
   cursor: pointer;
 }
 
-/* language */
-
-.lan {
-  padding: 10px;
-  transition: all 0.3s;
-  cursor: pointer;
+.search-xs {
+  display: none;
 }
 
 /* icons */
@@ -162,7 +156,8 @@ export default {
   display: none;
 }
 
-.icon-x {
+/* navigation menu */
+.dropdown-nav {
   display: none;
 }
 
@@ -198,12 +193,26 @@ export default {
 }
 
 /* responsive */
+@media only screen and (max-width: 567px) {
+  .search-icon {
+    display: none;
+  }
+  .search-xs {
+    display: block;
+  }
+}
 
 @media only screen and (max-width: 768px) {
+  .icon-bars {
+    display: block;
+  }
   .nav-left {
+    display: none;
+  }
+  .dropdown-nav {
     position: fixed;
     top: 0;
-    left: -50%;
+    right: 0;
     bottom: 0;
     background-color: #aaa;
     width: 50%;
@@ -213,13 +222,8 @@ export default {
     padding: 2rem 0;
     line-height: 4rem;
     transition: all 250ms ease-in-out;
-  }
-  .lan {
-    background-color: #aaa;
-    border: none;
-  }
-  .icon-bars {
-    display: flex;
+    z-index: 99;
+    display: block;
   }
 }
 </style>

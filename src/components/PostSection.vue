@@ -35,6 +35,7 @@ export default {
   cursor: pointer;
   max-width: 320px !important;
   transition: all 0.3s ease;
+  margin: 1rem;
 }
 
 .post__img {
@@ -88,5 +89,11 @@ export default {
 .detail-btn:hover {
   background-color: #000;
   color: #fff;
+}
+/* responsive */
+@media only screen and (max-width: 576px) {
+  .post {
+    font-size: 12px;
+  }
 }
 </style>

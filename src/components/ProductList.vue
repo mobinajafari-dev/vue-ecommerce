@@ -87,4 +87,12 @@ export default {
   transform: scale(1.02);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
+
+/* responsive */
+@media only screen and (max-width: 576px) {
+  .product,
+  .product__price {
+    font-size: 12px;
+  }
+}
 </style>

@@ -214,6 +214,28 @@ export default {
   .links {
     margin: 2rem 1rem;
   }
+  .media-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (min-width: 576px) {
+  .contact {
+    display: none;
+  }
+  .opening-hours {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .opening-hours {
+    display: block;
+  }
+}
+@media screen and (min-width: 992px) {
+  .contact {
+    display: block;
+  }
 }
 /* animation */
 

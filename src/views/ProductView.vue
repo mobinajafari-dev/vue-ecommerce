@@ -1,23 +1,24 @@
 <template>
-    <NavbarSection/>
-    <ProductMain/>
-    <FooterSection/>
+  <NavbarSection />
+  <ProductMain />
+  <FooterSection />
 </template>
 
 <script>
-import  NavbarSection from '@/components/NavbarSection.vue'
-import ProductMain from '@/components/ProductMain.vue'
-import FooterSection from '@/components/FooterSection.vue'
+import NavbarSection from "@/components/NavbarSection.vue";
+import ProductMain from "@/components/ProductMain.vue";
+import FooterSection from "@/components/FooterSection.vue";
 
-    export default {
-        name:'ProductView',
-        components :{
-            NavbarSection ,
-            ProductMain,
-            FooterSection
-        }
-    }
+export default {
+  name: "ProductView",
+  components: {
+    NavbarSection,
+    ProductMain,
+    FooterSection,
+  },
+};
 </script>
 
 <style>
+/* responsive */
 </style>
