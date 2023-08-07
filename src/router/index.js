@@ -5,10 +5,11 @@ import ShoppingCardView from "../views/ShoppingCardView.vue";
 import ProductView from "../views/ProductView.vue";
 import NotFound from "../views/NotFound.vue";
 import UserProfileView from "../views/UserProfileView.vue";
-import ForgetPassword from "../components/ForgetPassword.vue";
-import Password from "../components/Password.vue";
-import Signin from "../components/Signin.vue";
+import ForgetPassword from "../views/ForgetPassword.vue";
+import Signin from "../views/Signin.vue";
 import AboutUsView from "../views/AboutUsView.vue";
+import Password from "../views/Password.vue";
+import ConfirmPassword from "../views/ConfirmPassword.vue";
 
 const routes = [
   {
@@ -29,17 +30,17 @@ const routes = [
   {
     path: "/forget-password",
     name: "forget-password",
-    component: () => import("../components/ForgetPassword.vue"),
+    component: () => import("../views/ForgetPassword.vue"),
   },
   {
     path: "/password",
     name: "password",
-    component: () => import("../components/Password.vue"),
+    component: () => import("../views/Password.vue"),
   },
   {
     path: "/sign-in",
     name: "sign-in",
-    component: () => import("../components/Signin.vue"),
+    component: () => import("../views/Signin.vue"),
   },
   {
     path: "/login",
@@ -56,6 +57,11 @@ const routes = [
     path: "/about-us",
     name: "about-us",
     component: () => import("../views/AboutUsView.vue"),
+  },
+  {
+    path: "/confirm-password",
+    name: "confirm-password",
+    component: () => import("../views/ConfirmPassword.vue"),
   },
 
   // redirect

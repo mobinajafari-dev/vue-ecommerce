@@ -12,7 +12,7 @@
             <button class="error__btn" @click="redirect">Back to Home</button>
         </div> -->
       <div class="wrapper">
-        <button class="cta" @click="back">
+        <button class="cta" @click="back()">
           <p>برگشت</p>
           <span>
             <svg
@@ -198,6 +198,20 @@ path.two {
   }
   100% {
     fill: white;
+  }
+}
+
+/* responsive */
+
+@media only screen and (max-width: 576px) {
+  .error__title {
+    font-weight: 500;
+    font-size: 18px;
+    padding: 0.5rem;
+  }
+  .error__txt {
+    padding: 0.5rem;
+    font-size: 14px;
   }
 }
 </style>

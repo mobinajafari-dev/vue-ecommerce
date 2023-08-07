@@ -70,6 +70,7 @@
               >جستجو</router-link
             >
           </li>
+          <li><p @click="back()" class="normal nav-left__link">بازگشت</p></li>
         </ul>
       </div>
       <router-view />
@@ -92,6 +93,9 @@ export default {
   methods: {
     toggelMobileNav() {
       this.mobileNav = !this.mobileNav;
+    },
+    back() {
+      this.$router.go(-1);
     },
   },
 };
