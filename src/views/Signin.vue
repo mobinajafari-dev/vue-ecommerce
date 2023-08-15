@@ -105,7 +105,7 @@
           />
         </fieldset>
       </form>
-      <div class="btn-wrapper mt-1">
+      <div class="double-btn mt-1 m-auto">
         <router-link :to="{ name: 'password' }" class="user__btn normal mt-1"
           >تکمیل اطلاعات</router-link
         >
