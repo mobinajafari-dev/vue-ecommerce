@@ -1,28 +1,29 @@
 <template>
   <NavbarSection />
   <div class="product-page">
-    <img src="@/assets/black-sweater.jpg" alt="product" />
     <div class="product-info">
-      <h2 class="product-name">Sweater</h2>
+      <h2 class="product-name">لورم اپیسوم</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos at
-        molestias ut quaerat soluta error.
+        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+        از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و
+        سطرآنچنان که لازم است
       </p>
-      <p>10 $</p>
+      <p>100.000 تومان</p>
       <button>Add</button>
     </div>
+    <img src="@/assets/black-sweater.jpg" alt="black-sweater" />
   </div>
   <div class="description">
-    <span>colors : </span>
-    <span>Black , white , pink</span> <br />
-    <span>size : </span>
-    <span>free</span> <br />
-    <span>material : </span>
-    <span>cotton</span> <br />
-    <span>Categories : </span>
-    <span>casual</span> <br />
-    <span>Available : </span>
-    <span>yes</span>
+    <span>رنگ های موجود</span>
+    <span>صورتی ، سفید ، مشکی</span> <br />
+    <span>سایز ها:</span>
+    <span>فری</span> <br />
+    <span>جنس :</span>
+    <span>نخی</span> <br />
+    <span>دسته :</span>
+    <span>اسپرت</span> <br />
+    <span>موجودی :</span>
+    <span>10 عدد</span>
   </div>
   <div class="comment">
     <div class="comment-img">
@@ -41,8 +42,9 @@
       </p>
     </div>
   </div>
+  <FAQs /> <br />
   <div class="recommend">
-    <h2 class="recommend-title">You might also like ...</h2>
+    <h2 class="recommend-title">محصولات مشابه</h2>
     <div class="post-wrapper">
       <div class="post">
         <img src="@/assets/black-sweater.jpg" alt="sweater" />
@@ -81,12 +83,14 @@
 
 <script>
 import NavbarSection from "@/components/NavbarSection.vue";
+import FAQs from "@/components/FAQs.vue";
 import FooterSection from "@/components/FooterSection.vue";
 
 export default {
   name: "ProductView",
   components: {
     NavbarSection,
+    FAQs,
     FooterSection,
   },
 };
