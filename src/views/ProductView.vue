@@ -42,7 +42,16 @@
       </p>
     </div>
   </div>
-  <FAQs /> <br />
+  <div class="faqs">
+    <h4 class="faqs__title">سوالات متداول</h4>
+    <FAQ
+      v-for="(faq, i) in faqs"
+      :key="i"
+      :faq="faq"
+      :index="i"
+      :open="faq.open"
+    />
+  </div>
   <div class="recommend">
     <h2 class="recommend-title">محصولات مشابه</h2>
     <div class="post-wrapper">
@@ -83,15 +92,41 @@
 
 <script>
 import NavbarSection from "@/components/NavbarSection.vue";
-import FAQs from "@/components/FAQs.vue";
+import FAQ from "@/components/FAQ.vue";
 import FooterSection from "@/components/FooterSection.vue";
 
 export default {
   name: "ProductView",
   components: {
     NavbarSection,
-    FAQs,
+    FAQ,
     FooterSection,
+  },
+  data() {
+    return {
+      faqs: [
+        {
+          question: `ارسال رایگان در چه صورت به سبد کالا تعلق می گیره؟`,
+          answer: `برای خرید های بالای 500 هزار تومان هزینه ارسال رایگان محاسبه میشود`,
+          isOpen: false,
+        },
+        {
+          question: `چطوری محصول رو ارجاع بدم؟`,
+          answer: `تا بعد از 7 روز از گرفتن مرسوله می توانید محصول را درصورت عدم
+              رضایت ارجاع دهید ، کافی است با این شماره تماس بگیرید (0900000000)
+            `,
+          isOpen: false,
+        },
+        {
+          question: `کی سفارش به دستم میرسه؟`,
+          answer: `معمولا با پست معمولی بین 7 الی 10 روز و با پست پیشتاز بین 3 الی 4
+              روز زمان می برد. ضمنا شما می توانید ازریق کد مرسوله وضعیت سفارش
+              خود را چک فرمایید.
+            `,
+          isOpen: false,
+        },
+      ],
+    };
   },
 };
 </script>
@@ -115,6 +150,18 @@ export default {
 .comment-img {
   width: 32px;
 }
+
+/* faqs */
+.faqs {
+  margin: 0 auto;
+}
+.faqs__title {
+  font-weight: 900;
+  font-size: 24px;
+  margin: 2rem 7rem;
+}
+
+/* recommendation */
 
 .recommend-title {
   text-align: center;
