@@ -5,28 +5,14 @@
     <div class="user__content">
       <img src="@/assets/logo.webp" alt="logo" class="user__logo" />
       <h2 class="user__title">یک کلمه عبور مطمئن را انتخاب کنید</h2>
-      <form class="form m-auto">
-        <fieldset class="form__box">
-          <legend class="form__title">رمز عبور :</legend>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="رمز عبور خود را وارد کنید"
-            class="form__input"
-          />
-        </fieldset>
-        <fieldset class="form__box">
-          <legend class="form__title">تکرار رمز عبور :</legend>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            class="form__input"
-            placeholder="رمز عبور خود را وارد کنید"
-          />
-        </fieldset>
-      </form>
+      <div class="form m-auto">
+        <passwordInput
+          v-for="(input, i) in inputs"
+          :key="i"
+          :input="input"
+          :index="i"
+        />
+      </div>
       <router-link
         :to="{ name: 'confirm-password' }"
         class="user__btn single-btn m-auto"
@@ -42,10 +28,17 @@
 </template>
 <script>
 import NavbarSection from "@/components/NavbarSection.vue";
+import passwordInput from "@/components/passwordInput.vue";
 export default {
   name: "Password",
   components: {
     NavbarSection,
+    passwordInput,
+  },
+  data() {
+    return {
+      inputs: [{ title: "رمز عبور" }, { title: "تکرار رمز عبور" }],
+    };
   },
 };
 </script>

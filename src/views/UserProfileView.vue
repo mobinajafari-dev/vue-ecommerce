@@ -16,16 +16,12 @@
             class="form__input"
           />
         </fieldset>
-        <fieldset class="form__box">
-          <legend class="form__title">رمز عبور :</legend>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            class="form__input"
-            placeholder="رمز عبور خود را وارد کنید"
-          />
-        </fieldset>
+        <passwordInput
+          v-for="(input, i) in inputs"
+          :key="i"
+          :input="input"
+          :index="i"
+        />
         <div class="checkbox">
           <input
             type="checkbox"
@@ -60,13 +56,18 @@
 
 <script>
 import NavbarSection from "@/components/NavbarSection.vue";
+import passwordInput from "@/components/passwordInput.vue";
+
 export default {
   name: "UserProfileView",
   components: {
     NavbarSection,
+    passwordInput,
   },
   setup() {
-    return {};
+    return {
+      inputs: [{ title: "رمز عبور" }],
+    };
   },
 };
 </script>
@@ -180,6 +181,7 @@ export default {
 .user__link {
   color: #000;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .password__link {
