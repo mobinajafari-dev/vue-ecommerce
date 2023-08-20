@@ -1,29 +1,30 @@
 <template>
   <div class="password-input">
     <div class="field field_v2">
-      <label for="password" class="ha-screen-reader">password</label>
+      <label for="user" class="ha-screen-reader"></label>
       <input
-        id="password"
+        id="user"
         class="field__input"
-        placeholder="ASh&9Ion@5"
-        type="password"
+        :type="type"
+        :placeholder="placeholder"
         required
       />
       <div class="field__label-wrap" aria-hidden="true">
-        <p class="field__label right">{{ input.title }}</p>
+        <p class="field__label">{{ title }}</p>
       </div>
     </div>
-    <!-- help text -->
   </div>
 </template>
 
 <script>
 export default {
-  name: "passwordInput",
-  props: ["input", "index"],
+  name: "textInput",
+  props: ["title", "type", "placeholder"],
+  data() {
+    return {};
+  },
 };
 </script>
-
 <style>
 .password-input {
   margin: 15px;

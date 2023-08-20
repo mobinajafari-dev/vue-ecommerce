@@ -14,17 +14,11 @@
         کنید تا کد بازیابی رمز عبور برای شما ارسال گردد
       </p>
       <form class="form m-auto">
-        <fieldset class="form__box">
-          <legend class="form__title">ایمیل / شماره همراه :</legend>
-          <input
-            type="text"
-            name="forget-password"
-            id="forget-password"
-            placeholder="ashion@gmail.com"
-            class="form__input"
-            required
-          />
-        </fieldset>
+        <textInput
+          type="text"
+          title="شماره همراه / ایمیل"
+          placeholder="ashion@gmail.com"
+        />
       </form>
       <router-link
         :to="{ name: 'confirm-password' }"
@@ -42,10 +36,12 @@
 
 <script>
 import NavbarSection from "@/components/NavbarSection.vue";
+import textInput from "@/components/textInput.vue";
 export default {
   name: "ForgetPassword",
   components: {
     NavbarSection,
+    textInput,
   },
   methods: {
     back() {

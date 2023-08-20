@@ -6,104 +6,36 @@
       <h2 class="user__title">ثبت نام</h2>
       <form class="sign-in__form">
         <div class="double-input">
-          <fieldset class="form__box">
-            <legend class="form__title">نام و نام خانوادگی :</legend>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="ashion.com"
-              class="form__input"
-            />
-          </fieldset>
-          <fieldset class="form__box">
-            <legend class="form__title">ایمیل :</legend>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="ashion@gmail.com"
-              class="form__input"
-            />
-          </fieldset>
-        </div>
-        <div class="double-input">
-          <fieldset class="form__box">
-            <legend class="form__title">شماره همراه :</legend>
-            <input
-              type="text"
-              name="phone"
-              id="phone"
-              placeholder="09305497319"
-              class="form__input"
-            />
-          </fieldset>
-          <fieldset class="form__box">
-            <legend class="form__title">تاریخ تولد :</legend>
-            <input
-              type="date"
-              name="birthday"
-              id="password"
-              class="form__input"
-              placeholder=""
-            />
-          </fieldset>
-        </div>
-        <div class="double-input">
-          <fieldset class="form__box">
-            <legend class="form__title">جنسیت :</legend>
-            <select name="gender" id="gender" class="select-input">
-              <option value="man">مرد</option>
-              <option value="woman">زن</option>
-            </select>
-          </fieldset>
-          <fieldset class="form__box">
-            <legend class="form__title">کد ملی :</legend>
-            <input
-              type="text"
-              name="natinal-code"
-              id="natinal-code"
-              placeholder="09010901738"
-              class="form__input"
-            />
-          </fieldset>
-        </div>
-        <div class="double-input">
-          <fieldset class="form__box">
-            <legend class="form__title">استان :</legend>
-            <select name="province" id="province" class="select-input">
-              <option value="tehran" selected>تهران</option>
-              <option value="markazi">مرکزی</option>
-              <option value="azarbayejan-sharghi">آذربایجان شرقی</option>
-              <option value="azarbayejan-gharbi">آذربایجان غربی</option>
-              <option value="golesta">گلستان</option>
-              <option value="mazandaran">مازندران</option>
-              <option value="yazd">یزد</option>
-              <option value="hamedan">همدان</option>
-              <option value="fars">فارس</option>
-              <option value="qom">قم</option>
-              <option value="semnan">سمنان</option>
-              <option value="kerman">کرمان</option>
-              <option value="kordestan">کردستان</option>
-            </select>
-          </fieldset>
-          <fieldset class="form__box">
-            <legend class="form__title">شهر :</legend>
-            <select class="select-input">
-              <option value="tehran" selected>تهران</option>
-            </select>
-          </fieldset>
-        </div>
-        <fieldset class="form__box">
-          <legend class="form__title">آدرس :</legend>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است،"
-            class="address__input"
+          <textInput
+            title="نام و نام خانوادگی"
+            type="text"
+            placeholder="rezarezaee"
           />
-        </fieldset>
+          <textInput
+            title="ایمیل"
+            type="email"
+            placeholder="ahsion@gmail.com"
+          />
+        </div>
+        <div class="double-input">
+          <textInput
+            title="شماره همراه"
+            type="number"
+            placeholder="09305497319"
+          />
+          <textInput title="کد ملی" type="number" placeholder="09305497319" />
+        </div>
+        <div class="double-input">
+          <city />
+        </div>
+        <div class="double-input"></div>
+        <legend class="form__title">آدرس :</legend>
+        <textarea
+          type="text"
+          name="email"
+          id="email"
+          class="address__input"
+        ></textarea>
       </form>
       <div class="double-btn mt-1 m-auto">
         <router-link :to="{ name: 'password' }" class="user__btn normal mt-1"
@@ -121,14 +53,21 @@
 
 <script>
 import NavbarSection from "@/components/NavbarSection.vue";
+import textInput from "@/components/textInput.vue";
+import city from "@/components/city.vue";
+
 export default {
   name: "Signin",
   components: {
     NavbarSection,
+    textInput,
+    city,
   },
   methods: {},
   setup() {
-    return {};
+    return {
+      textInputs: [{ title: "نام و نام خانوادگی" }],
+    };
   },
 };
 </script>

@@ -6,16 +6,7 @@
       <img src="@/assets/logo.webp" alt="logo" class="user__logo" />
       <h2 class="user__title">ورود و ثبت نام</h2>
       <form class="form">
-        <fieldset class="form__box">
-          <legend class="form__title">نام کاربری :</legend>
-          <input
-            type="text"
-            name="user"
-            id="user"
-            placeholder="نام کاربری را وارد کنید"
-            class="form__input"
-          />
-        </fieldset>
+        <textInput text="text" placeholder="rezarezaee" title="نام کاربری" />
         <passwordInput
           v-for="(input, i) in inputs"
           :key="i"
@@ -57,16 +48,19 @@
 <script>
 import NavbarSection from "@/components/NavbarSection.vue";
 import passwordInput from "@/components/passwordInput.vue";
+import textInput from "@/components/textInput.vue";
 
 export default {
   name: "UserProfileView",
   components: {
     NavbarSection,
     passwordInput,
+    textInput,
   },
   setup() {
     return {
       inputs: [{ title: "رمز عبور" }],
+      title: "نام کاربری",
     };
   },
 };
