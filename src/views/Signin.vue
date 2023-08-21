@@ -26,21 +26,26 @@
           <textInput title="کد ملی" type="number" placeholder="09305497319" />
         </div>
         <div class="double-btn">
-          <textInput title="تاریخ تولد" type="date" />
           <div class="gender">
-            <label for="gender" class="gender__title">جنسیت</label>
             <select name="gender" id="gender" class="gender__select">
               <option value="female" class="gender__option">آقا</option>
-              <option value="male" selected class="gender__option">خانم</option>
+              <option value="" class="gender__option" selected>جنسیت</option>
+              <option value="male" class="gender__option">خانم</option>
             </select>
           </div>
+          <city />
         </div>
-        <city />
-        <textInput
-          type="text"
-          title="آدرس"
-          placeholder="خیابان... کوچه...پلاک0"
-        />
+        <div class="double-btn">
+          <textInput
+            type="text"
+            title="آدرس"
+            placeholder="خیابان... کوچه...پلاک0"
+            class=""
+          />
+          <div class="birthdate">
+            <date-picker v-model="birthdate"></date-picker>
+          </div>
+        </div>
       </form>
       <div class="double-btn mt-1 m-auto">
         <router-link :to="{ name: 'password' }" class="user__btn normal mt-1"
@@ -60,6 +65,7 @@
 import NavbarSection from "@/components/NavbarSection.vue";
 import textInput from "@/components/textInput.vue";
 import city from "@/components/city.vue";
+import DatePicker from "vue3-persian-datetime-picker";
 
 export default {
   name: "Signin",
@@ -67,20 +73,29 @@ export default {
     NavbarSection,
     textInput,
     city,
+    DatePicker,
   },
   methods: {},
   setup() {
     return {
-      textInputs: [{ title: "نام و نام خانوادگی" }],
+      birthdate: "",
     };
   },
 };
 </script>
 
 <style>
+/*total style */
+
+span {
+  transform: none !important;
+}
+
+/* sign in form */
+
 .sign-in__form {
   flex-wrap: wrap;
-  max-width: 450px;
+  max-width: 500px;
 }
 .sign-in__form {
   display: flex;
@@ -89,19 +104,31 @@ export default {
   align-items: flex-start;
 }
 
+/* birthdate */
+
+.birthdate {
+  display: inline;
+  max-width: 316px;
+  padding: 10px !important;
+}
+
+.birthdate__title {
+  display: inline;
+}
+
+span:nth-child(2) {
+  margin-left: 0;
+}
 /* gender */
 
 .gender {
-}
-
-.gender__title {
-  margin: 10px;
+  margin: 0 1.5rem;
 }
 
 .gender__select {
   border: 0;
   outline: none;
-  width: 80px;
+  width: 120px;
 }
 
 .gender__option {
@@ -113,6 +140,8 @@ export default {
 .double-input {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
 }
 .form__box {
   margin: 5px;
