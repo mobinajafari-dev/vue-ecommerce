@@ -20,10 +20,10 @@
         <div class="double-input">
           <textInput
             title="شماره همراه"
-            type="number"
+            type="text"
             placeholder="09305497319"
           />
-          <textInput title="کد ملی" type="number" placeholder="09305497319" />
+          <textInput title="کد ملی" type="text" placeholder="09305497319" />
         </div>
         <div class="double-btn">
           <div class="gender">
