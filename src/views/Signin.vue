@@ -25,17 +25,22 @@
           />
           <textInput title="کد ملی" type="number" placeholder="09305497319" />
         </div>
-        <div class="double-input">
-          <city />
+        <div class="double-btn">
+          <textInput title="تاریخ تولد" type="date" />
+          <div class="gender">
+            <label for="gender" class="gender__title">جنسیت</label>
+            <select name="gender" id="gender" class="gender__select">
+              <option value="female" class="gender__option">آقا</option>
+              <option value="male" selected class="gender__option">خانم</option>
+            </select>
+          </div>
         </div>
-        <div class="double-input"></div>
-        <legend class="form__title">آدرس :</legend>
-        <textarea
+        <city />
+        <textInput
           type="text"
-          name="email"
-          id="email"
-          class="address__input"
-        ></textarea>
+          title="آدرس"
+          placeholder="خیابان... کوچه...پلاک0"
+        />
       </form>
       <div class="double-btn mt-1 m-auto">
         <router-link :to="{ name: 'password' }" class="user__btn normal mt-1"
@@ -83,17 +88,34 @@ export default {
   justify-content: center;
   align-items: flex-start;
 }
+
+/* gender */
+
+.gender {
+}
+
+.gender__title {
+  margin: 10px;
+}
+
+.gender__select {
+  border: 0;
+  outline: none;
+  width: 80px;
+}
+
+.gender__option {
+  background: #eee;
+}
+
+/* 2 inputs */
+
 .double-input {
   display: flex;
+  align-items: center;
 }
 .form__box {
   margin: 5px;
-}
-.address__input {
-  padding: 2rem;
-  border: none;
-  background-color: #eee;
-  border-radius: 10px;
 }
 .select-input {
   border: none;
@@ -103,6 +125,7 @@ export default {
 }
 
 /* responsive */
+
 @media only screen and (max-width: 576px) {
   .sign-in__form {
     max-width: 100%;

@@ -1,24 +1,122 @@
 <template>
-  <div class="double-input">
-    <legend class="form__title">استان :</legend>
-    <select name="province" id="province" class="select-input">
-      <option
-        value="locations.value"
-        v-for="(location, province) in locations"
-        :key="province"
-      >
-        {{ locations.province }}
+  <div class="m-auto double-btn">
+    <select
+      v-model="selectedProvince"
+      @change="updateCities"
+      class="city__select"
+    >
+      <option value="" selected class="city__option">استان</option>
+      <option v-for="(province, i) in provinces" :key="i" class="city__option">
+        {{ province }}
       </option>
     </select>
 
-    <legend class="form__title">شهر :</legend>
-    <select class="select-input" id="city">
+    <select v-model="selectedCity" class="city__select">
+      <option value="" selected class="city__option">شهر</option>
       <option
-        value="locations.cities.value"
-        v-for="(city, i) in locations.cities"
+        v-for="(city, i) in tehran"
         :key="i"
+        class="city__option"
+        v-show="selectedProvince === 'تهران'"
       >
-        {{ locations.cities.cityName }}
+        {{ city }}
+      </option>
+      <option
+        v-for="(city, i) in kordestan"
+        :key="i"
+        class="city__option"
+        v-show="selectedProvince === 'کردستان'"
+      >
+        {{ city }}
+      </option>
+      >
+      <option
+        v-for="(city, i) in golestan"
+        :key="i"
+        class="city__option"
+        v-show="selectedProvince === 'گلستان'"
+      >
+        {{ city }}
+      </option>
+      <option
+        v-for="(city, i) in semnan"
+        :key="i"
+        class="city__option"
+        v-show="selectedProvince === 'سمنان'"
+      >
+        {{ city }}
+      </option>
+      <option
+        v-for="(city, i) in qom"
+        :key="i"
+        class="city__option"
+        v-show="selectedProvince === 'قم'"
+      >
+        {{ city }}
+      </option>
+      <option
+        v-for="(city, i) in fars"
+        :key="i"
+        class="city__option"
+        v-show="selectedProvince === 'فارس'"
+      >
+        {{ city }}
+      </option>
+      <option
+        v-for="(city, i) in kerman"
+        :key="i"
+        class="city__option"
+        v-show="selectedProvince === 'کرمان'"
+      >
+        {{ city }}
+      </option>
+      <option
+        v-for="(city, i) in hamedan"
+        :key="i"
+        class="city__option"
+        v-show="selectedProvince === 'همدان'"
+      >
+        {{ city }}
+      </option>
+      <option
+        v-for="(city, i) in yazd"
+        :key="i"
+        class="city__option"
+        v-show="selectedProvince === 'یزد'"
+      >
+        {{ city }}
+      </option>
+      <option
+        v-for="(city, i) in mazandaran"
+        :key="i"
+        class="city__option"
+        v-show="selectedProvince === 'مازندران'"
+      >
+        {{ city }}
+      </option>
+      <option
+        v-for="(city, i) in markazi"
+        :key="i"
+        class="city__option"
+        v-show="selectedProvince === 'مرکزی'"
+      >
+        {{ city }}
+      </option>
+      <option
+        v-for="(city, i) in azarbayejanSharghi"
+        :key="i"
+        class="city__option"
+        v-show="selectedProvince === 'آذربایجان شرقی'"
+      >
+        {{ city }}
+      </option>
+      <option
+        v-for="(city, i) in azarbayejanGharbi"
+        :key="i"
+        class="city__option"
+        v-show="selectedProvince === 'آذربایجان غربی'"
+      >
+        {{ city }}
       </option>
     </select>
   </div>
@@ -28,27 +126,57 @@
 export default {
   name: "city",
   data() {
-    locations: [
-      {
-        province: "تهران",
-        cities: [{ value: "tehran", cityName: "تهران" }],
-        value: "tehran",
-      },
-      { province: "کردستان", city: [] },
-      { province: "گلستان", city: [] },
-      { province: "سمنان", city: [] },
-      { province: "قم", city: [] },
-      { province: "فارس", city: [] },
-      { province: "کرمان", city: [] },
-      { province: "همدان", city: [] },
-      { province: "یزد", city: [] },
-      { province: "مازندران", city: [] },
-      { province: "مرکزی", city: [{ value: "arak", cityName: "اراک" }] },
-      { province: "آذربایجان شرقی", city: [] },
-      { province: "آذربایجان غربی", city: [] },
-    ];
+    return {
+      selectedProvince: "",
+      selectedCity: "",
+      provinces: [
+        "تهران",
+        "کردستان",
+        "گلستان",
+        "سمنان",
+        "قم",
+        "فارس",
+        "کرمان",
+        "همدان",
+        "یزد",
+        "مازندران",
+        "مرکزی",
+        "آذربایجان شرقی",
+        "آذربایجان غربی",
+      ],
+      tehran: ["تهران", "شهریار", "دماوند", "فیروزکوه", "شمیران", "ورامین"],
+      kordestan: ["مریوان", "سنندج"],
+      golestan: ["گرگان"],
+      semnan: ["سمنان"],
+      qom: ["قم"],
+      fars: ["شیراز"],
+      kerman: ["کرمان"],
+      hamedan: ["همدان"],
+      yazd: ["یزد"],
+      mazandaran: ["ساری"],
+      markazi: ["اراک"],
+      azarbayejanGharbi: ["ارومیه"],
+      azarbayejanSharghi: ["تبریز"],
+    };
+  },
+  methods: {
+    updateCities() {
+      this.selectedCity = "";
+    },
   },
 };
 </script>
 
-<style></style>
+<style>
+.city__select {
+  margin: 1rem;
+  width: 120px;
+  outline: none;
+  border: 0;
+}
+
+.city__option {
+  background-color: #eee;
+  border-radius: 5px;
+}
+</style>
