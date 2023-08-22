@@ -10,7 +10,7 @@
         required
       />
       <div class="field__label-wrap" aria-hidden="true">
-        <p class="field__label right">{{ input.title }}</p>
+        <p class="field__label right">{{ title }}</p>
       </div>
     </div>
     <!-- help text -->
@@ -20,7 +20,7 @@
 <script>
 export default {
   name: "passwordInput",
-  props: ["input", "index"],
+  props: ["input", "index", "title"],
 };
 </script>
 

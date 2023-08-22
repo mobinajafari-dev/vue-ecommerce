@@ -3,27 +3,22 @@
     class="otp"
     maxlength="6"
     placeholder="******"
-    v-model="code"
+    v-model="otpCode"
     required
+    autofocus
+    @keydown="otpValidation"
   />
-  <p class="otp__alert">{{ alert[index] }}</p>
+  <p>{{ helperText }}</p>
 </template>
 
 <script>
 export default {
   name: "otp",
+  validation: "",
+  helperText: "",
   data() {
-    return {
-      code: "",
-      index: 0,
-      alert: [
-        "لطفا کد ارسال شده را وارد نمایید",
-        "کد ارسال شده را به صورت عدد وارد نمایید",
-        "لطفا عدد ارسال شده را به صورت کامل وارد نمایید",
-      ],
-    };
+    return {};
   },
-  methods: {},
 };
 </script>
 

@@ -7,12 +7,7 @@
       <h2 class="user__title">ورود و ثبت نام</h2>
       <form class="form">
         <textInput text="text" placeholder="rezarezaee" title="نام کاربری" />
-        <passwordInput
-          v-for="(input, i) in inputs"
-          :key="i"
-          :input="input"
-          :index="i"
-        />
+        <passwordInput title="رمز عبور" />
         <div class="checkbox">
           <input
             type="checkbox"
@@ -58,10 +53,7 @@ export default {
     textInput,
   },
   setup() {
-    return {
-      inputs: [{ title: "رمز عبور" }],
-      title: "نام کاربری",
-    };
+    return {};
   },
 };
 </script>

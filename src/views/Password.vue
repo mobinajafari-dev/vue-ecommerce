@@ -6,12 +6,8 @@
       <img src="@/assets/logo.webp" alt="logo" class="user__logo" />
       <h2 class="user__title">یک کلمه عبور مطمئن را انتخاب کنید</h2>
       <div class="form m-auto">
-        <passwordInput
-          v-for="(input, i) in inputs"
-          :key="i"
-          :input="input"
-          :index="i"
-        />
+        <passwordInput title="رمز عبور" />
+        <passwordInput title="تکرار رمز عبور" />
       </div>
       <router-link
         :to="{ name: 'confirm-password' }"
