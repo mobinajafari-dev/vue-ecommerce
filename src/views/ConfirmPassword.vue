@@ -10,11 +10,9 @@
       <img src="@/assets/logo.webp" alt="logo" class="user__logo" />
       <h2 class="user__title">کد دریافتی را وارد نمایید</h2>
       <form class="form m-auto">
-        <otp v-model="otpCode" @keydown="otpValidation" />
-        <p class="otp__alert">کد دریافتی را وارد نمایید</p>
-        <countdown timerCount="120" />
-        <p class="user__alert">ثانیه تا دریافت کد بعدی</p>
+        <otp v-model="otpCode" />
       </form>
+      <countdown />
       <button class="user__btn single-btn m-auto">ثبت نهایی</button>
       <div class="password__link mt-1 double-btn">
         <p @click="back" class="pr user__link">→ بازگشت</p>
@@ -38,12 +36,12 @@ export default {
     return {
       otpCode: "",
       validation: false,
-      helperText: "",
     };
   },
   components: {
     NavbarSection,
     otp,
+    countdown,
   },
   methods: {
     back() {
