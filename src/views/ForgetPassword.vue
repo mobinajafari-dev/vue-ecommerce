@@ -61,11 +61,14 @@ export default {
 /* text */
 
 .user__info {
-  margin: 0 0 1rem 1.2rem;
+  margin: 1rem;
 }
 
 /* responsive */
 
-@media only screen and (max-width: 567px) {
+@media only screen and (max-width: 992px) {
+  .user__content {
+    margin: 0 auto;
+  }
 }
 </style>

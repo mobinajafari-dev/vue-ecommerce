@@ -2,12 +2,18 @@
   <NavbarSection />
   <div class="user">
     <img src="../assets/login.jpg" alt="login" class="user__img" />
-    <div class="user__content">
-      <img src="@/assets/logo.webp" alt="logo" class="user__logo" />
+    <div class="user__content m-auto">
+      <img src="@/assets/logo.webp" alt="logo" class="user__logo pt-1" />
       <h2 class="user__title">ورود و ثبت نام</h2>
-      <form class="form ml-5">
-        <textInput text="text" placeholder="rezarezaee" title="نام کاربری" />
-        <passwordInput title="رمز عبور" />
+      <form class="form mr-5">
+        <textInput
+          text="text"
+          placeholder="rezarezaee"
+          title="نام کاربری"
+          class="text-input"
+        />
+        <passwordInput title="رمز عبور" class="text-input" />
+        <br />
         <div class="checkbox">
           <input
             type="checkbox"
@@ -61,7 +67,7 @@ export default {
 <style>
 /* total */
 
-.ml-5 {
+.mr-5 {
   margin-right: 5px;
 }
 
@@ -106,7 +112,7 @@ export default {
 /* title */
 
 .user__title {
-  margin-bottom: 2rem;
+  margin: 0.5rem;
 }
 /* form */
 
@@ -134,6 +140,7 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin: 1rem 0;
 }
 
 .form__checkbox {
@@ -179,6 +186,7 @@ export default {
   display: flex;
   margin: 0 auto;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 /* hover */
@@ -200,7 +208,7 @@ export default {
   }
   .double-btn {
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     margin-top: 15px;
   }
   .user__logo {
@@ -218,6 +226,9 @@ export default {
   .user__link {
     margin: 10px auto;
   }
+  .form {
+    margin: 1rem auto;
+  }
 }
 
 @media only screen and (min-width: 576px) {
@@ -231,6 +242,9 @@ export default {
     margin: 3rem auto;
     max-width: 450px;
     padding: 1rem;
+  }
+  .form {
+    margin: 0 auto;
   }
 }
 @media only screen and (min-width: 992px) {

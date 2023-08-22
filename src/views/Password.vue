@@ -2,7 +2,7 @@
   <NavbarSection />
   <div class="user m-auto">
     <img src="../assets/password.jpg" alt="password" class="user__img" />
-    <div class="user__content">
+    <div class="user__content m-auto">
       <img src="@/assets/logo.webp" alt="logo" class="user__logo" />
       <h2 class="user__title">یک کلمه عبور مطمئن را انتخاب کنید</h2>
       <div class="form m-auto">
@@ -47,4 +47,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+/* responsive */
+
+@media only screen and (max-width: 567px) {
+  .user__content {
+    margin: 0 auto;
+  }
+  .user__title {
+    margin-top: 40px;
+  }
+}
+</style>

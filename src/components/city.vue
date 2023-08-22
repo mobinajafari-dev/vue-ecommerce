@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto double-btn">
+  <div class="m-auto double-btn city">
     <select
       v-model="selectedProvince"
       @change="updateCities"
@@ -168,6 +168,9 @@ export default {
 </script>
 
 <style>
+.city {
+  flex-wrap: wrap;
+}
 .city__select {
   margin: 1rem;
   width: 120px;

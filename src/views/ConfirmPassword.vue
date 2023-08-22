@@ -15,10 +15,10 @@
       <countdown />
       <button class="user__btn single-btn m-auto">ثبت نهایی</button>
       <div class="password__link mt-1 double-btn">
-        <p @click="back" class="pr user__link">→ بازگشت</p>
         <router-link :to="{ name: 'home' }" class="user__link m-auto pr normal"
-          >بازگشت به خانه ←</router-link
-        >
+          >→ بازگشت به خانه
+        </router-link>
+        <p @click="back" class="pr user__link">بازگشت ←</p>
         <router-view />
       </div>
     </div>
@@ -61,5 +61,12 @@ export default {
 .user__alert {
   padding-top: 1rem;
   text-align: center;
+}
+
+/* responsive */
+@media only screen and (max-width: 576px) {
+  .double-btn {
+    align-items: center;
+  }
 }
 </style>

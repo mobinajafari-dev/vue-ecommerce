@@ -4,17 +4,19 @@
     <img src="../assets/sign-in.jpg" alt="sign-in" class="user__img" />
     <div class="user__content">
       <h2 class="user__title">ثبت نام</h2>
-      <form class="sign-in__form">
+      <form class="sign-in__form m-auto">
         <div class="double-input">
           <textInput
             title="نام و نام خانوادگی"
             type="text"
             placeholder="rezarezaee"
+            class="text-input"
           />
           <textInput
             title="ایمیل"
             type="email"
             placeholder="ahsion@gmail.com"
+            class="text-input"
           />
         </div>
         <div class="double-input">
@@ -22,10 +24,17 @@
             title="شماره همراه"
             type="text"
             placeholder="09305497319"
+            class="text-input"
           />
-          <textInput title="کد ملی" type="text" placeholder="09305497319" />
+          <textInput
+            title="کد ملی"
+            type="text"
+            placeholder="09305497319"
+            class="text-input"
+          />
         </div>
         <div class="double-btn">
+          <city />
           <div class="gender">
             <select name="gender" id="gender" class="gender__select">
               <option value="female" class="gender__option">آقا</option>
@@ -33,7 +42,6 @@
               <option value="male" class="gender__option">خانم</option>
             </select>
           </div>
-          <city />
         </div>
         <div class="double-btn">
           <textInput
@@ -159,6 +167,10 @@ span:nth-child(2) {
   }
   .double-input {
     flex-wrap: wrap;
+  }
+  .text-input {
+    padding: 10px;
+    margin: 1rem auto;
   }
 }
 </style>
