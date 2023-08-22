@@ -5,7 +5,7 @@
     <div class="user__content">
       <img src="@/assets/logo.webp" alt="logo" class="user__logo" />
       <h2 class="user__title">ورود و ثبت نام</h2>
-      <form class="form">
+      <form class="form ml-5">
         <textInput text="text" placeholder="rezarezaee" title="نام کاربری" />
         <passwordInput title="رمز عبور" />
         <div class="checkbox">
@@ -61,6 +61,10 @@ export default {
 <style>
 /* total */
 
+.ml-5 {
+  margin-right: 5px;
+}
+
 .pr {
   padding-right: 10px;
 }
@@ -105,6 +109,7 @@ export default {
   margin-bottom: 2rem;
 }
 /* form */
+
 .form__box {
   display: flex;
   justify-content: space-between;

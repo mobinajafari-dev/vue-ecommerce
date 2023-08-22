@@ -6,14 +6,29 @@
         id="password"
         class="field__input"
         placeholder="ASh&9Ion@5"
-        type="password"
+        v-bind:type="[showPassword ? 'text' : 'password']"
         required
+        v-model="password"
       />
       <div class="field__label-wrap" aria-hidden="true">
         <p class="field__label right">{{ title }}</p>
       </div>
     </div>
-    <!-- help text -->
+  </div>
+  <div class="password">
+    <div class="password-icon">
+      <img
+        width="20"
+        height="20"
+        src="https://img.icons8.com/material-outlined/24/visible--v1.png"
+        alt="visible--v1"
+        @click="showPassword = !showPassword"
+      />
+    </div>
+  </div>
+  <div class="helpertext">
+    <p v-if="this.password.length < 8" class="red">پسوورد نامعتبر است</p>
+    <p v-if="this.password.length >= 8" class="green">پسوورد معتبر است</p>
   </div>
 </template>
 
@@ -21,10 +36,44 @@
 export default {
   name: "passwordInput",
   props: ["input", "index", "title"],
+  data() {
+    return {
+      showPassword: false,
+      password: "",
+    };
+  },
+  methods: {},
 };
 </script>
 
 <style>
+/* password validation styles */
+
+.red {
+  color: #f00;
+  font-size: 13px;
+  margin-bottom: 10px;
+  margin-right: 30px;
+}
+
+.green {
+  color: #0a0;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-right: 30px;
+}
+
+/* password visibility styles */
+.password {
+  position: absolute;
+}
+.password-icon {
+  position: relative;
+  top: -40px;
+  right: -12px;
+  cursor: pointer;
+}
+
 .password-input {
   margin: 15px;
 }
@@ -175,8 +224,8 @@ CORE STYLES
   top: var(--fieldHintTopHover, 0.25rem);
 }
 
-/* 
-effect 
+/*
+effect
 */
 
 .field_v2 .field__label-wrap {

@@ -47,16 +47,14 @@
           </div>
         </div>
       </form>
-      <div class="double-btn mt-1 m-auto">
-        <router-link :to="{ name: 'password' }" class="user__btn normal mt-1"
-          >تکمیل اطلاعات</router-link
-        >
-        <router-link
-          :to="{ name: 'home' }"
-          class="user__link password__link mt-1"
-          >بازگشت به خانه ←</router-link
-        >
-      </div>
+      <router-link
+        :to="{ name: 'password' }"
+        class="user__btn normal mt-1 m-auto"
+        >تکمیل اطلاعات</router-link
+      >
+      <router-link :to="{ name: 'home' }" class="user__link password__link"
+        >بازگشت به خانه ←</router-link
+      >
     </div>
   </div>
 </template>

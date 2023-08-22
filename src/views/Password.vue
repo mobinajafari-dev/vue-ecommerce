@@ -9,11 +9,14 @@
         <passwordInput title="رمز عبور" />
         <passwordInput title="تکرار رمز عبور" />
       </div>
-      <router-link
-        :to="{ name: 'confirm-password' }"
-        class="user__btn single-btn m-auto"
-        >بعدی</router-link
-      >
+      <div class="double-btn m-auto">
+        <router-link
+          :to="{ name: 'confirm-password' }"
+          class="user__btn single-btn"
+          >بعدی</router-link
+        >
+        <button @click="back" class="pr user__btn single-btn">بازگشت</button>
+      </div>
       <br />
       <router-link :to="{ name: 'home' }" class="user__link m-auto"
         >بازگشت به خانه ←</router-link
@@ -35,6 +38,11 @@ export default {
     return {
       inputs: [{ title: "رمز عبور" }, { title: "تکرار رمز عبور" }],
     };
+  },
+  methods: {
+    back() {
+      this.$router.go(-1);
+    },
   },
 };
 </script>
