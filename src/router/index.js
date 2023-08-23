@@ -4,7 +4,7 @@ import SearchView from "../views/SearchView.vue";
 import ShoppingCardView from "../views/ShoppingCardView.vue";
 import ProductView from "../views/ProductView.vue";
 import NotFound from "../views/NotFound.vue";
-import UserProfileView from "../views/UserProfileView.vue";
+import login from "../views/login.vue";
 import ForgetPassword from "../views/ForgetPassword.vue";
 import Signin from "../views/Signin.vue";
 import AboutUsView from "../views/AboutUsView.vue";
@@ -44,8 +44,8 @@ const routes = [
   },
   {
     path: "/login",
-    name: "user-profile",
-    component: () => import("../views/UserProfileView.vue"),
+    name: "login",
+    component: () => import("../views/login.vue"),
   },
   {
     path: "/products",
@@ -64,6 +64,18 @@ const routes = [
     component: () => import("../views/ConfirmPassword.vue"),
   },
 
+  // error 403 , 502
+
+  {
+    path: "/forbiden-access",
+    name: "forbiden-access",
+    component: () => import("../views/ForbidenAccess.vue"),
+  },
+  {
+    path: "/bad-gateaway",
+    name: "bad-gateaway",
+    component: () => import("../views/BadGateaway.vue"),
+  },
   // redirect
 
   {

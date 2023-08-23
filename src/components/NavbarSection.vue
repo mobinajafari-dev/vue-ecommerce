@@ -40,7 +40,7 @@
           src="https://img.icons8.com/ios/50/shopping-bag--v1.png"
           alt="shopping-bag--v1"
       /></router-link>
-      <router-link class="border icon" :to="{ name: 'user-profile' }">
+      <router-link class="border icon" :to="{ name: 'login' }">
         <img
           width="32"
           height="32"

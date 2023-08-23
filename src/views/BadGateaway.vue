@@ -1,16 +1,10 @@
 <template>
   <div id="error">
-    <img class="error__img" src="../assets/error404.jpg" alt="ERROR404" />
+    <img class="error__img" src="../assets/error502.svg" alt="ERROR502" />
     <div class="error__content">
-      <h1 class="error__title">404 - Page Not Found</h1>
-      <p class="error__txt">صفحه مورد نظر شما یافت نشد !</p>
-      <p class="error__txt">
-        ممکن است صفحه حذف شده است یا در حال تعمیر می باشد ...
-      </p>
-      <!-- <div class="btn-wrapper">
-            <button class="error__btn" @click="back">Go Back</button>
-            <button class="error__btn" @click="redirect">Back to Home</button>
-        </div> -->
+      <h1 class="error__title">502 - Bad Gateaway</h1>
+      <p class="error__txt">شما مجاز به ورود نیستید!</p>
+      <p class="error__txt">شما اجازه دسترسی به این منبع را ندارید!</p>
       <div class="wrapper">
         <button class="cta" @click="back()">
           <p>برگشت</p>
@@ -56,7 +50,7 @@
 
 <script>
 export default {
-  name: "NotFound",
+  name: "BadGateaway",
   methods: {
     back() {
       this.$router.go(-1);
@@ -66,143 +60,6 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Poppins:900i");
-
-/* total styles */
-
-#error {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* image style */
-
-.error__img {
-  max-width: 60%;
-}
-
-/* content */
-
-.error__content {
-  display: flex;
-  flex-direction: column;
-  line-height: 3.5rem;
-  margin-top: 3rem;
-}
-
-/* title styles */
-
-.error__title {
-  font-weight: 600;
-  font-size: 2.8rem;
-  margin-bottom: 1.5rem;
-}
-
-/* text */
-
-.error__txt {
-  line-height: 2rem !important;
-}
-
-/* button */
-
-.wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.cta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  padding: 5px 40px;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  color: white;
-  background: #6225e6;
-  transition: 1s;
-  box-shadow: 6px 6px 0 black;
-  transform: skewX(-15deg);
-  cursor: pointer;
-}
-
-.cta:focus {
-  outline: none;
-}
-
-.cta:hover {
-  transition: 0.5s;
-  box-shadow: 10px 10px 0 #fbc638;
-}
-
-.cta span:nth-child(2) {
-  transition: 0.5s;
-  margin-right: 0px;
-}
-
-.cta:hover span:nth-child(2) {
-  transition: 0.5s;
-  margin-right: 45px;
-}
-
-span.error {
-  transform: skewX(15deg);
-}
-
-span:nth-child(2) {
-  width: 20px;
-  margin-left: 30px;
-  position: relative;
-  top: 12%;
-}
-
-/**************SVG****************/
-
-path.one {
-  transition: 0.4s;
-  transform: translateX(-60%);
-}
-
-path.two {
-  transition: 0.5s;
-  transform: translateX(-30%);
-}
-
-.cta:hover path.three {
-  animation: color_anim 1s infinite 0.2s;
-}
-
-.cta:hover path.one {
-  transform: translateX(0%);
-  animation: color_anim 1s infinite 0.6s;
-}
-
-.cta:hover path.two {
-  transform: translateX(0%);
-  animation: color_anim 1s infinite 0.4s;
-}
-
-/* SVG animations */
-
-@keyframes color_anim {
-  0% {
-    fill: white;
-  }
-  50% {
-    fill: #fbc638;
-  }
-  100% {
-    fill: white;
-  }
-}
-
-/* responsive */
-
 @media only screen and (max-width: 576px) {
   .error__title {
     font-weight: 500;

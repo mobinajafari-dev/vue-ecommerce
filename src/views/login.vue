@@ -52,7 +52,7 @@ import passwordInput from "@/components/passwordInput.vue";
 import textInput from "@/components/textInput.vue";
 
 export default {
-  name: "UserProfileView",
+  name: "login",
   components: {
     NavbarSection,
     passwordInput,
