@@ -1,23 +1,30 @@
 <template>
   <input
     class="otp"
-    maxlength="6"
     placeholder="******"
-    v-model="otpCode"
+    v-model="otp"
+    type="text"
     required
     autofocus
-    @keydown="otpValidation"
+    @input="otpValidation"
   />
-  <p>{{ helperText }}</p>
 </template>
 
 <script>
 export default {
   name: "otp",
-  validation: "",
-  helperText: "",
   data() {
-    return {};
+    return {
+      otp: "",
+    };
+  },
+  methods: {
+    otpValidation() {
+      this.otp = this.otp.replace(/\D/g, "");
+      if (this.otp.length > 6) {
+        this.otp = this.otp.slice(0, 6);
+      }
+    },
   },
 };
 </script>

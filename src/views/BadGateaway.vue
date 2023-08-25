@@ -3,8 +3,7 @@
     <img class="error__img" src="../assets/error502.svg" alt="ERROR502" />
     <div class="error__content">
       <h1 class="error__title">502 - Bad Gateaway</h1>
-      <p class="error__txt">شما مجاز به ورود نیستید!</p>
-      <p class="error__txt">شما اجازه دسترسی به این منبع را ندارید!</p>
+      <p class="error__txt">پس از 30 ثانیه ی دیگر دوباره تلاش کنید</p>
       <div class="wrapper">
         <button class="cta" @click="back()">
           <p>برگشت</p>

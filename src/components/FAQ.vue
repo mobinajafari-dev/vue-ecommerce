@@ -62,7 +62,7 @@ export default {
   border-radius: 8px;
   transition: all 0.2s ease-in;
   padding: 15px;
-  margin: 15px;
+  margin: 15px 5.5rem;
   font-family: "Vazir-Thin";
   font-weight: 200;
 }
