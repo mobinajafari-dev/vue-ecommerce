@@ -10,6 +10,9 @@ import Signin from "../views/Signin.vue";
 import AboutUsView from "../views/AboutUsView.vue";
 import Password from "../views/Password.vue";
 import ConfirmPassword from "../views/ConfirmPassword.vue";
+import ForbidenAccess from "../views/ForbidenAccess.vue";
+import UserProfile from "../views/UserProfile.vue";
+import BadGateaway from "../views/BadGateaway.vue";
 
 const routes = [
   {
@@ -62,6 +65,11 @@ const routes = [
     path: "/confirm-password",
     name: "confirm-password",
     component: () => import("../views/ConfirmPassword.vue"),
+  },
+  {
+    path: "/user-profile",
+    name: "user-profile",
+    component: () => import("../views/UserProfile.vue"),
   },
 
   // error 403 , 502
