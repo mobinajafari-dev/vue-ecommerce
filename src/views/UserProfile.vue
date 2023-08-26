@@ -1,14 +1,10 @@
 <template>
   <NavbarSection />
-  <div id="user-profile">
+  <div class="user-profile">
     <div class="user__sidebar">
       <img src="" alt="" />
       <div class="sidebar__menu">
         <ul>
-          <li class="normal"></li>
-          <li class="normal"></li>
-          <li class="normal"></li>
-          <li class="normal"></li>
           <li class="normal"></li>
         </ul>
         <button class="single-btn normal">Log Out</button>
@@ -34,7 +30,7 @@ export default {
 </script>
 
 <style>
-#user-profile {
+.user-profile {
   display: flex;
   align-items: center;
   justify-content: right;
