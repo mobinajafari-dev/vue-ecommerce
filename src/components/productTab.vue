@@ -17,36 +17,43 @@
       </button>
     </div>
     <div v-if="activeTab === 'tab1'" class="tab__content">
-      <div></div>
+      <div>kfjwofijoe</div>
     </div>
     <div v-else-if="activeTab === 'tab2'" class="tab__content">
-      <div class="comment">
-        <div class="comment-img">
-          <img
-            width="50"
-            height="50"
-            src="https://img.icons8.com/ios/50/user-male-circle--v1.png"
-            alt="user-male-circle--v1"
-          />
-        </div>
-        <div class="comments-content">
-          <h4>username</h4>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Blanditiis, saepe.
-          </p>
-        </div>
+      <div class="comment__wrapper">
+        <CommentSection
+          v-for="(comment, i) in comments"
+          :key="i"
+          :index="i"
+          :comment="comment"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import CommentSection from "@/components/CommentSection.vue";
 export default {
   name: "productTab",
+  components: { CommentSection },
   data() {
     return {
-      activeTab: "tab1",
+      activeTab: "tab2",
+      comments: [
+        {
+          user: `لورم اپیسوم`,
+          text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
+        },
+        {
+          user: `لورم اپیسوم`,
+          text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
+        },
+        {
+          user: `لورم اپیسوم`,
+          text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
+        },
+      ],
     };
   },
 };
@@ -80,6 +87,13 @@ export default {
 .tab__content {
   padding: 1rem;
   margin: 1rem;
+}
+
+/* comment */
+
+.comment__wrapper {
+  display: block;
+  margin: 1rem 5;
 }
 
 /* animation */

@@ -130,20 +130,10 @@ export default {
   line-height: 3rem;
 }
 
-/* comments */
-
-.comment {
-  display: flex;
-}
-
-.comment-img {
-  width: 32px;
-}
-
 /* faqs */
 
 .faqs {
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 .faqs__title {
   font-weight: 900;
