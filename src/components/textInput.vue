@@ -7,7 +7,6 @@
         class="field__input"
         :type="type"
         :placeholder="placeholder"
-        @keydown="inputValidation"
         required
       />
       <div class="field__label-wrap" aria-hidden="true">
@@ -24,7 +23,6 @@ export default {
   data() {
     return {};
   },
-  methods: {},
 };
 </script>
 <style>

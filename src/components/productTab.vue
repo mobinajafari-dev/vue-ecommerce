@@ -27,6 +27,7 @@
           :index="i"
           :comment="comment"
         />
+        <CommentOut />
       </div>
     </div>
   </div>
@@ -34,12 +35,16 @@
 
 <script>
 import CommentSection from "@/components/CommentSection.vue";
+import CommentOut from "@/components/CommentOut.vue";
 export default {
   name: "productTab",
-  components: { CommentSection },
+  components: {
+    CommentSection,
+    CommentOut,
+  },
   data() {
     return {
-      activeTab: "tab2",
+      activeTab: "tab1",
       comments: [
         {
           user: `لورم اپیسوم`,
