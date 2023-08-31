@@ -16,9 +16,21 @@
         نظرات
       </button>
     </div>
+
     <div v-if="activeTab === 'tab1'" class="tab__content">
-      <div>kfjwofijoe</div>
+      <div class="description">
+        <p>
+          رنگ های موجود :
+          <span class="description__info">صورتی ، مشکی ، سفید</span>
+        </p>
+        <p>سایز ها: <span class="description__info">فری سایز</span></p>
+        <p>جنس :<span class="description__info">نخی</span></p>
+        <p>قد :<span class="description__info">100 سانتی متر</span></p>
+        <p>موجودی : <span class="description__info">2 عدد</span></p>
+        <p>قیمت کالا: <span class="description__info">100.000 تومان</span></p>
+      </div>
     </div>
+
     <div v-else-if="activeTab === 'tab2'" class="tab__content">
       <div class="comment__wrapper">
         <CommentSection
@@ -92,6 +104,19 @@ export default {
 .tab__content {
   padding: 1rem;
   margin: 1rem;
+}
+
+/* description */
+.description {
+  max-width: 920px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 20px;
+  line-height: 3rem;
+}
+
+.description__info {
+  padding-right: 10px;
 }
 
 /* comment */

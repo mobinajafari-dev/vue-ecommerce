@@ -126,13 +126,6 @@ export default {
   transition: all 0.5ms ease-in-out;
 }
 
-/* description */
-
-.description {
-  margin: 5px auto;
-  line-height: 3rem;
-}
-
 /* faqs */
 
 .faqs {
