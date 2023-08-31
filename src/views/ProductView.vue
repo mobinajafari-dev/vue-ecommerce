@@ -36,6 +36,9 @@
     <h2 class="recommend-title">محصولات مشابه</h2>
     <div class="post-wrapper">
       <productCard />
+      <productCard />
+      <productCard />
+      <productCard />
     </div>
   </section>
   <FooterSection />

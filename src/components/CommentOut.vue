@@ -17,7 +17,6 @@
         cols="30"
         rows="5"
         class="comment-out__txt"
-        fixed
       ></textarea>
     </div>
     <button class="comment-out__btn">ارسال</button>
