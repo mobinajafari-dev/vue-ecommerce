@@ -1,6 +1,9 @@
 <template>
   <NavbarSection />
   <section class="product-page">
+    <div class="product-img">
+      <img src="../assets/black-sweater.jpg" alt="product" />
+    </div>
     <div class="product-info">
       <h2 class="product__name">لورم اپیسوم</h2>
       <p class="product__content">
@@ -11,9 +14,6 @@
       <p class="product__content">100.000 تومان</p>
       <button class="product__btn">اضافه کردن به سبد خرید</button>
       <div class=""></div>
-    </div>
-    <div class="product-img">
-      <img src="../assets/black-sweater.jpg" alt="product" />
     </div>
   </section>
 
@@ -35,7 +35,6 @@
   <section class="recommend">
     <h2 class="recommend-title">محصولات مشابه</h2>
     <div class="post-wrapper">
-      <productCard />
       <productCard />
       <productCard />
       <productCard />
@@ -129,7 +128,7 @@ export default {
 /* faqs */
 
 .faqs {
-  margin: 2rem auto;
+  margin: 2rem;
 }
 .faqs__title {
   font-weight: 900;
@@ -152,7 +151,7 @@ export default {
 .post-wrapper {
   margin: 20px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 /* animation */
@@ -164,4 +163,47 @@ export default {
 }
 
 /* responsive */
+@media only screen and (max-width: 576px) {
+  .product-page {
+    flex-wrap: wrap;
+    margin: 2rem;
+  }
+  .product-info {
+    margin: 1rem;
+  }
+  .faqs {
+    margin: 1rem;
+  }
+  .faqs__title {
+    margin: 2rem 3rem;
+  }
+}
+@media only screen and (min-width: 576px) {
+  .product-page {
+    flex-wrap: wrap;
+    margin: 2rem;
+  }
+  .post-wrapper {
+    flex-direction: column;
+    margin: 20px auto;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .product-page {
+    margin: 2rem auto;
+  }
+}
+@media only screen and (min-width: 920px) {
+  .post-wrapper {
+    flex-direction: row;
+    margin: 20px 0;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .faqs {
+    margin: 2rem;
+  }
+}
 </style>

@@ -18,11 +18,13 @@
           type="text"
           title="شماره همراه / ایمیل"
           placeholder="ashion@gmail.com"
+          :v-model="username"
         />
       </form>
       <router-link
         :to="{ name: 'confirm-password' }"
         class="user__btn single-btn m-auto"
+        @click="forgetPassword"
         >ارسال کد</router-link
       >
       <br />
@@ -39,6 +41,11 @@ import NavbarSection from "@/components/NavbarSection.vue";
 import textInput from "@/components/textInput.vue";
 export default {
   name: "ForgetPassword",
+  data() {
+    return {
+      username: "",
+    };
+  },
   components: {
     NavbarSection,
     textInput,
@@ -46,6 +53,9 @@ export default {
   methods: {
     back() {
       this.$router.go(-1);
+    },
+    forgetPassword() {
+      console.log(this.username);
     },
   },
 };

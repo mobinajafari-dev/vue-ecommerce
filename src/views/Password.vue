@@ -6,15 +6,13 @@
       <img src="@/assets/logo.webp" alt="logo" class="user__logo" />
       <h2 class="user__title">یک کلمه عبور مطمئن را انتخاب کنید</h2>
       <div class="form m-auto">
-        <passwordInput title="رمز عبور" />
-        <passwordInput title="تکرار رمز عبور" />
+        <passwordInput title="رمز عبور" v-model="newPassword" />
+        <passwordInput title="تکرار رمز عبور" v-model="confirmPassword" />
       </div>
       <div class="double-btn m-auto">
-        <router-link
-          :to="{ name: 'confirm-password' }"
-          class="user__btn single-btn"
-          >بعدی</router-link
-        >
+        <button @click="console.log(newPassword)" class="user__btn single-btn">
+          بعدی
+        </button>
         <button @click="back" class="pr user__btn single-btn">بازگشت</button>
       </div>
       <br />
@@ -36,12 +34,16 @@ export default {
   },
   data() {
     return {
-      inputs: [{ title: "رمز عبور" }, { title: "تکرار رمز عبور" }],
+      newPassword: "",
+      confirmPassword: "",
     };
   },
   methods: {
     back() {
       this.$router.go(-1);
+    },
+    handleInputChange(valueName, value) {
+      this[valueName] = value;
     },
   },
 };

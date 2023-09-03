@@ -7,8 +7,9 @@
         class="field__input"
         placeholder="ASh&9Ion@5"
         v-bind:type="[showPassword ? 'text' : 'password']"
+        :value="value"
+        @input="$emit('input', $event.target.value)"
         required
-        v-model="password"
       />
       <div class="field__label-wrap" aria-hidden="true">
         <p class="field__label right">{{ title }}</p>
@@ -26,23 +27,28 @@
       />
     </div>
   </div>
-  <div class="helpertext">
-    <p v-if="this.password.length < 8" class="red">پسوورد نامعتبر است</p>
-    <p v-if="this.password.length >= 8" class="green">پسوورد معتبر است</p>
-  </div>
+  <!-- <div class="helpertext">
+    <p v-if="this.valuealue.length < 8" class="red">پسوورد نامعتبر است</p>
+    <p v-if="this.value.length >= 8" class="green">پسوورد معتبر است</p>
+  </div> -->
 </template>
 
 <script>
 export default {
   name: "passwordInput",
-  props: ["input", "index", "title"],
+  props: { title: String, value: { type: String, default: "" } },
   data() {
     return {
+      inputValue: this.value,
       showPassword: false,
-      password: "",
     };
   },
-  methods: {},
+  methods: {
+    handleChange(event) {
+      const value = event.target.value;
+      this.$emit("input", valueName, value);
+    },
+  },
 };
 </script>
 

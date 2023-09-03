@@ -131,4 +131,10 @@ export default {
 button.active {
   border-bottom: 2px solid #555;
 }
+/* responsive */
+@media only screen and (max-width: 576px) {
+  .tab__wrapper {
+    margin: 0 0.2rem;
+  }
+}
 </style>

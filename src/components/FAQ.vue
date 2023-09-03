@@ -72,4 +72,23 @@ export default {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   transform: scaleX(1.02);
 }
+/* responsive */
+@media only screen and (max-width: 576px) {
+  .faq__quiz {
+    min-width: 280px;
+    margin: 1rem 0;
+  }
+  .faq__question {
+    font-size: 14px;
+  }
+  .faq__answer {
+    min-width: 280px;
+    font-size: 13px;
+  }
+}
+@media only screen and (min-width: 576px) {
+  .faq__quiz {
+    margin: 1.5rem;
+  }
+}
 </style>

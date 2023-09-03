@@ -43,6 +43,7 @@ export default {
 }
 .comment-out {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin: 0.5rem 0;
@@ -73,5 +74,15 @@ export default {
 
 .comment-out__btn:hover {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+/* responsive */
+@media only screen and (max-width: 576px) {
+  .comment-out {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0.5rem 0;
+  }
 }
 </style>

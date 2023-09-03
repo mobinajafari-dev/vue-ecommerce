@@ -59,4 +59,16 @@ export default {
   background-color: #000;
   color: #fff;
 }
+
+/* responsive */
+@media only screen and (min-width: 920px) {
+  .product-card {
+    width: 280px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .product-card {
+    width: 300px;
+  }
+}
 </style>

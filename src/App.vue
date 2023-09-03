@@ -7,6 +7,11 @@
 import HomeView from "./views/HomeView.vue";
 export default {
   components: { HomeView },
+  data() {
+    return {
+      baseURL: "http://localhost:80/api/v1/fa/",
+    };
+  },
   name: "App",
   component: {
     HomeView,
