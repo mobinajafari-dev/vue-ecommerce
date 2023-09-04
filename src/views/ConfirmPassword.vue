@@ -10,7 +10,7 @@
       <img src="@/assets/logo.webp" alt="logo" class="user__logo" />
       <h2 class="user__title">کد دریافتی را وارد نمایید</h2>
       <form class="form m-auto">
-        <otp v-model="otpCode" />
+        <otp @update-otp="handleOtp($event)" />
       </form>
       <countdown />
       <button class="user__btn single-btn m-auto">ثبت نهایی</button>
@@ -34,7 +34,6 @@ export default {
   name: "ConfirmPassword",
   data() {
     return {
-      otpCode: "",
       validation: false,
     };
   },
@@ -46,6 +45,9 @@ export default {
   methods: {
     back() {
       this.$router.go(-1);
+    },
+    handleOtp(otp) {
+      return (this.otpCode = otp);
     },
   },
 };

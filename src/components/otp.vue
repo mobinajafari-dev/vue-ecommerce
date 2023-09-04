@@ -7,6 +7,7 @@
     required
     autofocus
     @input="otpValidation"
+    @keydown="$emit('update-otp', otp)"
   />
 </template>
 

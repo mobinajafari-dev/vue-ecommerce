@@ -7,6 +7,8 @@
         class="field__input"
         :type="type"
         :placeholder="placeholder"
+        v-model="data"
+        @keydown="$emit('update-data', data)"
         required
       />
       <div class="field__label-wrap" aria-hidden="true">
@@ -21,8 +23,11 @@ export default {
   name: "textInput",
   props: ["title", "type", "placeholder"],
   data() {
-    return {};
+    return {
+      data: "",
+    };
   },
+  methods: {},
 };
 </script>
 <style>

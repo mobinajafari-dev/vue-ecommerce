@@ -90,5 +90,8 @@ export default {
   .faq__quiz {
     margin: 1.5rem;
   }
+  .faq__answer {
+    margin: 1.5rem;
+  }
 }
 </style>

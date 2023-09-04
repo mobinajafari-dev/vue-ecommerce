@@ -11,8 +11,13 @@
           placeholder="rezarezaee"
           title="نام کاربری"
           class="text-input"
+          @update-data="handleUsername($event)"
         />
-        <passwordInput title="رمز عبور" class="text-input" />
+        <passwordInput
+          title="رمز عبور"
+          class="text-input"
+          @update-password="handlePassword($event)"
+        />
         <br />
         <div class="checkbox">
           <input
@@ -20,12 +25,13 @@
             name="remind"
             id="remind"
             class="form__checkbox"
+            v-model="remind"
           />
           <label for="remind" class="form__text">مرا به خاطر بسپار !</label>
         </div>
       </form>
       <div class="double-btn">
-        <button class="user__btn single-btn">ورود</button>
+        <button class="user__btn single-btn" @click="login">ورود</button>
         <router-link class="user__btn single-btn" :to="{ name: 'sign-in' }"
           >ثبت نام</router-link
         >
@@ -50,6 +56,8 @@
 import NavbarSection from "@/components/NavbarSection.vue";
 import passwordInput from "@/components/passwordInput.vue";
 import textInput from "@/components/textInput.vue";
+import Swal from "sweetalert";
+import axios from "axios";
 
 export default {
   name: "login",
@@ -58,9 +66,39 @@ export default {
     passwordInput,
     textInput,
   },
-  setup() {
-    return {};
+  props: ["baseURL"],
+  data() {
+    return {
+      remind: "",
+    };
   },
+  methods: {
+    handleUsername(data) {
+      return (this.username = data);
+    },
+    handlePassword(password) {
+      return (this.password = password);
+    },
+    async login(e) {
+      const user = {
+        username: this.username,
+        password: this.password,
+        remind: this.remind,
+      };
+      console.log(user);
+      await axios
+        .get(`${this.baseURL}/auth/login`, user)
+        .then(() => {
+          this.$router.replace("/user-profile");
+          swal({
+            text: "شما با موفقیت وارد سایت شدید!",
+            icon: "success",
+          });
+        })
+        .catch(() => this.$router.replace("/forbiden-access"));
+    },
+  },
+  computed() {},
 };
 </script>
 
