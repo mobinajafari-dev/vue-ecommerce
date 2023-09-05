@@ -33,11 +33,31 @@
       </div>
     </div>
 
-    <div class="user__content">
+    <div class="user-profile__content">
+      <!-- welcome -->
       <div v-show="activeLink === 'welcome'"></div>
-      <div v-show="activeLink === 'profilePicture'">
-        <input type="image" src="" alt="profile-picture" />
+
+      <!-- profile picture -->
+      <div v-show="activeLink === 'profilePicture'" class="profile-picture">
+        <h3 class="profile-picture__title">تغییر عکس پروفایل</h3>
+        <div class="preview" v-if="imageUrl">
+          <img :src="imageUrl" alt="Preview" class="profile-picture__img" />
+        </div>
+        <div v-else class="placeholder">
+          <p class="profile-picture__text">عکس مورد نظر خود را انتخاب کنید</p>
+        </div>
+        <input
+          type="file"
+          ref="fileInput"
+          @change="handleFileChange"
+          class="profile-picture__input"
+        />
+        <button class="user-btn" @click="updateProfile">
+          تغییر عکس پروفایل
+        </button>
       </div>
+
+      <!-- change password -->
       <div v-show="activeLink === 'changePassword'" class="change-password">
         <h3>تغییر رمز عبور</h3>
         <passwordInput title="رمز فعلی" />
@@ -45,6 +65,8 @@
         <passwordInput title="تکرار رمز جدید" />
         <button @click="changepassword" class="user-btn">تغییر رمز عبور</button>
       </div>
+
+      <!-- update user information -->
       <div v-show="activeLink === 'updateUserInfo'"></div>
     </div>
   </div>
@@ -58,11 +80,24 @@ export default {
   data() {
     return {
       activeLink: "changePassword",
+      imageUrl: null,
     };
   },
   components: {
     NavbarSection,
     passwordInput,
+  },
+  methods: {
+    handleFileChange(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        this.imageUrl = e.target.result;
+      };
+
+      reader.readAsDataURL(file);
+    },
   },
 };
 </script>
@@ -96,6 +131,7 @@ export default {
 .profile-picture__btn {
   border: none;
   background-color: #fff;
+  cursor: pointer;
 }
 /* sidebar menu */
 .user__sidebar {
@@ -122,10 +158,43 @@ export default {
   background-color: #fff;
   display: block;
 }
-/* change password section */
-.change-password {
-  top: 25vh;
-  right: 500px;
+/* user content section */
+.user-profile__content {
+  top: 20vh;
+  right: 300px;
   position: absolute;
+}
+/* profile picture section */
+.profile-picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.profile-picture__title {
+  margin-bottom: 1rem;
+}
+.profile-picture__text {
+  margin: 1rem 0;
+}
+.preview {
+  margin: 0 0.5rem;
+  border-radius: 10px;
+}
+.placeholder {
+  border-radius: 10px;
+  background-color: #ccc;
+  padding: 2rem;
+  margin: 2rem 0.5rem;
+}
+.profile-picture__img {
+  width: 300px;
+}
+
+/* change password section */
+
+/* responsive */
+@media only screen and (max-width: 576px) {
 }
 </style>

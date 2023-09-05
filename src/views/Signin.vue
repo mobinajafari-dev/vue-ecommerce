@@ -7,41 +7,63 @@
       <form class="sign-in__form m-auto">
         <div class="double-input">
           <textInput
-            title="نام و نام خانوادگی"
+            title="نام"
             type="text"
-            placeholder="rezarezaee"
+            placeholder="reza"
             class="text-input"
+            @update-data="handleFirstName($event)"
           />
           <textInput
-            title="ایمیل"
-            type="email"
-            placeholder="ahsion@gmail.com"
+            title="نام خانوادگی"
+            type="text"
+            placeholder="rezaee"
             class="text-input"
+            @update-data="handleLastName($event)"
           />
         </div>
+
         <div class="double-input">
           <textInput
             title="شماره همراه"
             type="text"
             placeholder="09305497319"
             class="text-input"
+            @update-data="handlePhone($event)"
           />
+          <textInput
+            title="ایمیل"
+            type="email"
+            placeholder="ahsion@gmail.com"
+            class="text-input"
+            @update-data="handleEmail($event)"
+          />
+        </div>
+        <div class="double-btn">
           <textInput
             title="کد ملی"
             type="text"
             placeholder="09305497319"
             class="text-input"
+            @update-data="handleNationalCode($event)"
           />
-        </div>
-        <div class="double-btn">
-          <city />
           <div class="gender">
-            <select name="gender" id="gender" class="gender__select">
+            <select
+              name="gender"
+              id="gender"
+              class="gender__select"
+              v-model="gender"
+            >
               <option value="female" class="gender__option">آقا</option>
               <option value="" class="gender__option" selected>جنسیت</option>
               <option value="male" class="gender__option">خانم</option>
             </select>
           </div>
+        </div>
+        <div class="city-btn">
+          <city
+            @update-city="handleCity($event)"
+            @update-province="handleProvince($event)"
+          />
         </div>
         <div class="double-btn">
           <textInput
@@ -49,17 +71,16 @@
             title="آدرس"
             placeholder="خیابان... کوچه...پلاک0"
             class=""
+            @update-data="handleAddress($event)"
           />
           <div class="birthdate">
             <date-picker v-model="birthdate"></date-picker>
           </div>
         </div>
       </form>
-      <router-link
-        :to="{ name: 'password' }"
-        class="user__btn normal mt-1 m-auto"
-        >تکمیل اطلاعات</router-link
-      >
+      <button @click="register" class="single-btn user__btn m-auto">
+        تکمیل اطلاعات
+      </button>
       <router-link :to="{ name: 'home' }" class="user__link password__link"
         >بازگشت به خانه ←</router-link
       >
@@ -72,6 +93,8 @@ import NavbarSection from "@/components/NavbarSection.vue";
 import textInput from "@/components/textInput.vue";
 import city from "@/components/city.vue";
 import DatePicker from "vue3-persian-datetime-picker";
+import Swal from "sweetalert";
+import axios from "axios";
 
 export default {
   name: "Signin",
@@ -81,10 +104,63 @@ export default {
     city,
     DatePicker,
   },
-  methods: {},
-  setup() {
+  props: ["baseURL"],
+  methods: {
+    handleFirstName(data) {
+      return (this.firstName = data);
+    },
+    handleLastName(data) {
+      return (this.lastName = data);
+    },
+    handleEmail(data) {
+      return (this.email = data);
+    },
+    handleNationalCode(data) {
+      return (this.nationalCode = data);
+    },
+    handlePhone(data) {
+      return (this.phone = data);
+    },
+    handleAddress(data) {
+      return (this.address = data);
+    },
+    handleCity(selectedCity) {
+      return (this.city = selectedCity);
+    },
+    handleProvince(selectedProvince) {
+      return (this.province = selectedProvince);
+    },
+    async register(e) {
+      const register = {
+        firstName: this.firstName,
+        lastName: this.lastName,
+        email: this.email,
+        nationalCode: this.nationalCode,
+        phone: this.phone,
+        address: this.address,
+        birthdate: this.birthdate,
+        gender: this.gender,
+        city: this.city,
+        province: this.province,
+      };
+      console.log(register);
+      await axios
+        .post(`${this.baseURL}/auth/register`, register)
+        .then(() => {
+          this.$router.replace("/password");
+        })
+        .catch((err) =>
+          swal({
+            text: "لطفا تمامی فیلد ها را پر کنید",
+            icon: "error",
+          })
+        );
+    },
+  },
+  data() {
     return {
       birthdate: "",
+      gender: "",
     };
   },
 };
@@ -139,6 +215,10 @@ span:nth-child(2) {
 
 .gender__option {
   background: #eee;
+}
+
+.city-btn {
+  margin: 0 auto;
 }
 
 /* 2 inputs */

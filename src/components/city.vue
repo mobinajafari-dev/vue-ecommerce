@@ -4,6 +4,7 @@
       v-model="selectedProvince"
       @change="updateCities"
       class="city__select"
+      @keydown="$emit('update-province', selectedProvince)"
     >
       <option value="" selected class="city__option">استان</option>
       <option v-for="(province, i) in provinces" :key="i" class="city__option">
@@ -11,7 +12,11 @@
       </option>
     </select>
 
-    <select v-model="selectedCity" class="city__select">
+    <select
+      v-model="selectedCity"
+      class="city__select"
+      @keydown="$emit('update-city', selectedCity)"
+    >
       <option value="" selected class="city__option">شهر</option>
       <option
         v-for="(city, i) in tehran"

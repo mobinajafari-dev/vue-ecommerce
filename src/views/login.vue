@@ -83,11 +83,10 @@ export default {
       const user = {
         username: this.username,
         password: this.password,
-        remind: this.remind,
       };
       console.log(user);
       await axios
-        .get(`${this.baseURL}/auth/login`, user)
+        .post(`${this.baseURL}/auth/login`, user)
         .then(() => {
           this.$router.replace("/user-profile");
           swal({
@@ -95,7 +94,12 @@ export default {
             icon: "success",
           });
         })
-        .catch(() => this.$router.replace("/forbiden-access"));
+        .catch((err) =>
+          swal({
+            text: "شما در سایت ثبت نام نکرده اید!",
+            icon: "error",
+          })
+        );
     },
   },
   computed() {},
