@@ -53,9 +53,11 @@
               class="gender__select"
               v-model="gender"
             >
-              <option value="female" class="gender__option">آقا</option>
-              <option value="" class="gender__option" selected>جنسیت</option>
-              <option value="male" class="gender__option">خانم</option>
+              <option value="male" class="gender__option">آقا</option>
+              <option value="undefinded" class="gender__option" selected>
+                جنسیت
+              </option>
+              <option value="female" class="gender__option">خانم</option>
             </select>
           </div>
         </div>

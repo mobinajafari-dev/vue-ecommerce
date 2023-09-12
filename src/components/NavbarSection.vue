@@ -31,6 +31,7 @@
           height="32"
           src="https://img.icons8.com/ios/50/search--v1.png"
           alt="search--v1"
+          class="d-n"
         />
       </router-link>
       <router-link class="border icon" :to="{ name: 'shopping-card' }"
@@ -39,6 +40,7 @@
           height="32"
           src="https://img.icons8.com/ios/50/shopping-bag--v1.png"
           alt="shopping-bag--v1"
+          class="d-n"
       /></router-link>
       <router-link class="border icon" :to="{ name: 'login' }">
         <img
@@ -103,6 +105,10 @@ export default {
 
 <style>
 /* total style */
+
+.d-n {
+  display: none;
+}
 
 .normal {
   text-decoration: none;
